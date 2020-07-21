@@ -623,13 +623,11 @@
 		$('#bl-feedback form').submit(function(e) {
 			e.preventDefault();
 
+			$(this).find('[required]').addClass('attempted');
+
 			if ($('#feedback-agreement').prop('checked')) {
 				// FIXME DO SOMETHING
 			}
-		});
-		$('#bl-feedback form').find('button, input:submit').click(function(e) {
-			e.preventDefault();
-			$(this).closest('form').find('[required]').addClass('attempted');
 		});
 
 		// MODAL FEEDBACK
