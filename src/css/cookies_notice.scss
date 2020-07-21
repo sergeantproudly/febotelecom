@@ -1,50 +1,54 @@
 #cookies-notice {
 	position: fixed;
 	bottom: 2.8009535160905840286054827175209vw;
-	left: 0;
-	width: 100%;
+	right: 2.3837902264600715137067938021454vw;
 	z-index: 100;
-	padding: 0 2.8009535160905840286054827175209vw;
-	margin: 0 auto;
-	max-width: none;
-	min-height: 0;
 
 	@media (max-width: $adaptive-width-mobile) {
-		bottom: 4.4vw;
-		padding: 0 4.4vw;
+		bottom: 4.9vw;
+		right: $padding-edges-tablet-small;
+		left: $padding-edges-tablet-small;
 	}
 
 	& > .wrapper {
 		position: relative;
-		max-width: 71.275327771156138259833134684148%;
-		padding: 1.4898688915375446960667461263409vw 1.4898688915375446960667461263409vw 0.4898688915375446960667461263409vw;
-		margin: 0 auto;
-		background: rgb(6, 55, 139);
-		background: rgba(6, 55, 139, 0.62);
-		@include font-size(16);
+		width: 17.083333333333333333333333333333vw;
+		padding: 1.71875vw 1.6145833333333333333333333333333vw 1.6666666666666666666666666666667vw;
+		background: $background-color-darkblue;
+		@include font-size(15);
 		line-height: 1.28;
-		text-align: center;
 		box-sizing: border-box;
 		@include radius(10px);
+		@include box-shadow(12px, 4px, 35px, rgba(7, 34, 75, 0.42));
+
+		@media (max-width: $adaptive-width-desktop-semilarge) {
+			width: 19.6662693682955899880810488677vw;
+			padding: 1.96662693682955899880810488677vw 1.8474374255065554231227651966627vw 1.9070321811680572109654350417163vw;
+			@include font-size(18);
+		}
 
 		@media (max-width: $adaptive-width-tablet) {
-			@include font-size(15);
+			width: 42.708333333333333333333333333333vw;
+			@include font-size(20.7);
 			padding: 2.4898688915375446960667461263409vw 2.4898688915375446960667461263409vw 0.4898688915375446960667461263409vw;
 		}
 
 		@media (max-width: $adaptive-width-mobile) {
-			max-width: none;
-			padding: 3.4898688915375446960667461263409vw 3.4898688915375446960667461263409vw 1.4898688915375446960667461263409vw;
+			text-align: center;
+			width: 100%;
+			padding: 5.4375vw 4.6875vw 2.5vw;
 			@include font-size(14);
 		}
 	}
 
-	p {		
-		display: inline-block;
-		vertical-align: middle;
+	p {
 		cursor: default;
 		color: rgba(255, 255, 255, 0.6);
-		margin-bottom: 1vw;
+		margin-bottom: 1.3541666666666666666666666666667vw;
+
+		@media (max-width: $adaptive-width-desktop-semilarge) {
+			margin-bottom: 1.5494636471990464839094159713945vw;
+		}
 
 		@media (max-width: $adaptive-width-tablet) {
 			display: block;
@@ -65,19 +69,19 @@
 	}
 
 	.btn {
-		display: inline-block;
-		vertical-align: middle;
-		@include font-size(13);
+		@include font-size(12.15);
 		padding: 0.67473182359952324195470798569726vw 1.5646007151370679380214541120381vw;
 		white-space: nowrap;
 		min-width: 0;
 		text-transform: uppercase;
-		margin: 0 0 1vw 1.4131108462455303933253873659118vw;
+
+		@media (max-width: $adaptive-width-desktop-semilarge) {
+			@include font-size(14);
+		}
 
 		@media (max-width: $adaptive-width-tablet) {
-			@include font-size(14);
+			@include font-size(16);
 			padding: 1.57473182359952324195470798569726vw 2.1646007151370679380214541120381vw;
-			margin-left: 0;
 		}
 
 		@media (max-width: $adaptive-width-tablet) {
