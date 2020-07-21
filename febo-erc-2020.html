@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+	<link rel="manifest" href="assets/images/site.webmanifest">
+	<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="msapplication-TileColor" content="#0d2c57">
+	<meta name="msapplication-config" content="assets/images/browserconfig.xml">
+	<meta name="theme-color" content="#06378B">
+	<title>FEBO TELECOM</title>
+	<style type="text/css">
+        #page-preloader {
+            position: fixed;
+            bottom: 0;            
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #06378B;
+            z-index: 1000;
+            opacity: 1;
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+        }
+        #page-preloader.release {
+            height: 0;
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+        }
+        #page-preloader.top {
+        	bottom: auto;
+        	top: 0;
+        }
+        #page-preloader .loader {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            width: 121px;
+            height: 192px;
+            margin: -96px 0 0 -60px;
+        }
+        #page-preloader .loader .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #page-preloader .loader .container .lh1 {
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	width: 104px;
+        	height: 104px;
+        	opacity: 0;
+        	background: url('assets/images/logo_lh1.svg') no-repeat;
+        	background-size: contain;
+			z-index: 1003;
+			-webkit-transform: translate3d(-200px, 16px, 0);
+			transform: translate3d(-200px, 16px, 0);
+
+        }
+        #page-preloader .loader .container .lh2 {
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	width: 118px;
+        	height: 118px;
+        	opacity: 0;
+        	background: url('assets/images/logo_lh2.svg?1') no-repeat;
+        	background-size: contain;
+			z-index: 1001;
+			-webkit-transform: translate3d(-200px, 0, 0);
+			transform: translate3d(-200px, 0, 0);
+        }
+        #page-preloader .loader .container .r {
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	width: 121px;
+        	height: 118px;
+        	opacity: 0;
+        	background: url('assets/images/logo_r.svg?1') no-repeat;
+        	background-size: contain;
+			z-index: 1002;
+			-webkit-transform: translate3d(200px, 0, 0);
+			transform: translate3d(200px, 0, 0);
+        }
+        #page-preloader .loader .container .txt {
+        	position: absolute;
+        	top: 149px;
+        	left: 0;
+        	width: 109px;
+        	height: 44px;
+        	background: url('assets/images/logo_txt.svg') no-repeat;
+        	background-size: contain;
+        	opacity: 0;
+        	-webkit-transform: translate3d(6px, 5px, 0);
+			transform: translate3d(6px, 5px, 0);
+			z-index: 1001;
+        }
+        #page-preloader.animate .loader .container .lh1 {
+        	-webkit-transform: translate3d(1px, 15px, 0);
+			transform: translate3d(1px, 15px, 0);
+			opacity: 1;
+			-webkit-transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition: transform 1s ease, opacity 0.8s ease;
+               -moz-transition: transform 1s ease, opacity 0.8s ease;
+                 -o-transition: transform 1s ease, opacity 0.8s ease;
+                    transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition-delay: 0.5s;
+            -o-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+        }
+        #page-preloader.animate .loader .container .lh2 {
+        	-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+        	-webkit-transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition: transform 1s ease, opacity 0.8s ease;
+               -moz-transition: transform 1s ease, opacity 0.8s ease;
+                 -o-transition: transform 1s ease, opacity 0.8s ease;
+                    transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition-delay: 0.5s;
+            -o-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+        }
+        #page-preloader.animate .loader .container .r {
+        	-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+        	-webkit-transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition: transform 1s ease, opacity 0.8s ease;
+               -moz-transition: transform 1s ease, opacity 0.8s ease;
+                 -o-transition: transform 1s ease, opacity 0.8s ease;
+                    transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition-delay: 0.5s;
+            -o-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+        }
+        #page-preloader.animate .loader .container .txt {
+        	-webkit-transform: translate3d(6px, 0, 0);
+			transform: translate3d(6px, 0, 0);
+			opacity: 1;
+        	-webkit-transition: all 0.6s ease;
+            -webkit-transition: all 0.6s ease;
+               -moz-transition: all 0.6s ease;
+                 -o-transition: all 0.6s ease;
+                    transition: all 0.6s ease;
+            -webkit-transition-delay: 1.5s;
+            -o-transition-delay: 1.5s;
+            -moz-transition-delay: 1.5s;
+            transition-delay: 1.5s;
+        }
+        #page-preloader.released .loader {
+        	opacity: 0;
+        	-webkit-transition: opacity 0.4s ease;
+            -webkit-transition: opacity 0.4s ease;
+               -moz-transition: opacity 0.4s ease;
+                 -o-transition: opacity 0.4s ease;
+                    transition: opacity 0.4s ease;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css?20"/>
+</head>
+
+<body class="cs-darkblue">
+	<div id="page-preloader">
+        <div class="loader">
+            <div class="container">
+	            <div class="lh1"></div>
+	            <div class="lh2"></div>
+	            <div class="r"></div>
+	            <div class="txt"></div>
+            </div>
+        </div>
+    </div>
+
+	<div id="layout">
+		<header>
+			<div>
+				<a href="/" id="logo" class="animated fadeInDownSmall wow"><img src="assets/images/logo.svg" alt="FEBO TELECOM" title="FEBO TELECOM"></a>
+
+				<div id="buttons" class="animated fadeInDownSmall wow">
+					<button id="btn-contact" class="js-modal-link" data-target="#modal-feedback"><span>Contact us</span></button>
+					<button id="btn-profile"><span>Login</span></button>
+					<button id="btn-burger"><span>Menu</span></button>
+				</div>
+			</div>
+		</header>
+
+		<nav id="mn-main">
+			<ul class="animated fadeInRightSmall wow">
+				<li><a href="/">Home</a></li>
+				<li><a href="projects.html">Projects</a></li>
+				<li><a href="solutions.html">Solutions</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contacts.html">Contacts</a></li>
+				<li><a href="history.html">Our history</a></li>
+			</ul>
+			<ul class="ext animated fadeInRightSmall wow delay-02s">
+				<li class="active"><a href="news.html">News</a></li>
+				<li><a href="events.html">Events</a></li>
+				<li><a href="careers.html">Careers</a></li>
+				<li><a href="partners.html">Partners</a></li>
+			</ul>
+		</nav>
+
+        <div id="bread-crumbs" class="holder">
+            <div class="wrap">
+                <ul>
+                    <li><a href="news.html">Blog</a></li>
+                    <li>FEBO at the FIAERC 2020</li>
+                </ul>
+            </div>
+        </div>
+
+		<section class="content section" id="new">
+            <div class="waves white">
+                <svg preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 150">
+                    <path d="M0.00,49.98 C231.09,196.87 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+                    <path d="M0.00,49.98 C149.26,-44.92 281.32,218.58 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="display:none"></path>
+                </svg>
+            </div>
+		</section>
+
+        <div class="content section white" data-bg-inversion="true">
+            <div class="holder">
+                <div id="new-content">
+                    <div class="date">July 15, 2020</div>
+                    <h1>FEBO at the FIAERC 2020</h1>
+
+                    <p class="bigger">The FIA ERC (Fédération Internationale de l'Automobile European Rally Championship) is one of the most awaited motorsport events in Europe every year. In early May, Dmitry Feofanov’s Mitsubishi Lancer Evo X was unveiled, and yes, you see that right: FEBO will be in the FIA ERC 2020, supporting rally pilot Feofanov’s crew in the championship races.</p>
+
+                    <img src="assets/images/new1_full.jpg" alt="Some guys talking about how cool this article is" title="Some guys talking about how cool this article is" class="illustration">
+                    <legend>Image source: <a href="https://www.fiaerc.com/uncovered-feofanovs-erc2-challenger/" target="_blank">FIAERC.com</a></legend>
+
+                    <p>Feofanov, title holder for the EMV3/Estonian Rally Championship 2017 and ERT2/Baltic Rally Trophy 2018, has registered for ERC2 points in his Prospeed-run car. His co-driver will be Normunds Kokins from Latvia, who has been racing in various rally events since 2005. Feofanov and Normunds also drove together most recently in the Arctic Lapland Rally this winter.</p>
+
+                    <p>FEBO Telecom and Cash4SMS are proud to call the Baltic states home. To support two of their drivers in the FIA ERC’s more than 60 years of tradition of excellence in auto sports is exciting. It makes us thrilled to see the company racing in the rally, although of course all the great work will belong to the drivers and the crew!</p>
+
+                    <p class="nb">Feofanov says, “As a minimum I would like to get more experience of how to drive ERC rallies, particularly the events I did not participate in last year,” Feofanov said upon announcing his ERC2 programme. “Also, I will do my best to be at the ERC2 podium at the end of 2020.” </p>
+
+                    <p>Both <a href="https://febo.mobi/">FEBO.Mobi</a> and <a href="https://cash4sms.today/">Cash4SMS</a> stand for speed and dependability. These values will be racing across gravel and asphalt in the FIAERC.</p>
+
+                    <p>Who are you rooting for? The FIA European Rally Championship is set to be contested over seven events. The first round, Rally Di Roma Capitale in Italy, will be on July 24-26. </p>
+
+                    <p>Go here for the <a href="https://www.fiaerc.com/erc-2020-calendar-refresher/" target="_blank">Rally Calendar.</a></p>
+                </div>
+
+                <div id="social-shares" class="ss" data-share-title="Unified Network Automation for a Digital World" data-share-url="http://febotelecom.proudly.ru/new.html" data-share-image="" data-share-description="">
+                    <div class="h3">Share if you like this post</div>
+                    <ul>
+                        <li class="fb"><a href="#" target="_blank" rel="nofollow" data-api-url="https://www.facebook.com/sharer.php?p[url]=%url%&p[title]=%title%&p[summary]=%decsription%&p[images][0]=%image%"><img src="assets/images/ico_fb.svg" alt="Share" title="Share">Facebook</a></li>
+                        <li class="tw"><a href="#" target="_blank" rel="nofollow" data-api-url="https://twitter.com/share?url=%url%&text=%description%"><img src="assets/images/ico_tw.svg" alt="Tweet" title="Tweet">Twitter</a></li>
+                        <li class="in"><a href="#" target="_blank" rel="nofollow" data-api-url="https://www.linkedin.com/shareArticle?mini=true&url=%url%&title=%title%&summary=%description%&source=%source%"><img src="assets/images/ico_in.svg" alt="LinkedIn" title="LinkedIn">Linkedin</a></li>
+                    </ul>
+                </div>
+            </div>           
+
+            <div class="waves darkblue">
+                <svg preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 150">
+                    <path d="M0.00,49.98 C231.09,196.87 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+                    <path d="M0.00,49.98 C149.26,-44.92 281.32,218.58 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="display:none"></path>
+                </svg>
+            </div>
+        </div>
+
+		<div id="bl-feedback" class="darkblue">
+			<div class="holder">
+				<h2 class="animated fadeInUpSmall wow">Contact Us</h2>
+
+				<form action="#" method="post">
+                    <div class="line animated fadeInUpSmall wow">
+                        <div class="input-holder">
+                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
+                        	<i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
+                        	<i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                        	<input type="text" name="text" placeholder="Company" maxlength="255">
+                        	<i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd animated fadeInUpSmall wow">
+                        <div class="input-holder">
+                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                        	<i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <div class="cb-line animated fadeInUpSmall wow"><input type="checkbox" name="agreement" id="feedback-agreement" checked="checked"><label for="feedback-agreement">I agree to the <a href="terms-conditions.html">terms and conditions</a></label></div>
+                    <div class="btn-line animated fadeInUpSmall wow delay-02s"><button class="btn"><span>Send</span></button></div>
+                </form>
+			</div>
+		</div>
+
+		<footer>
+            <div class="holder">
+                <div class="wrap">
+                    <a href="/" id="logo-footer" class="animated fadeInUpSmall wow"><img src="assets/images/logo_short.svg" alt="FEBO TELECOM LTD" title="FEBO TELECOM LTD"></a>
+                    <div id="copyright" class="animated fadeInUpSmall wow">&copy; 2012 - 2020 FEBO TELECOM LTD <br>All rights reserved</div>
+
+                    <div id="mn-bottom">
+                        <div class="line animated fadeInUpSmall wow delay-02s">
+                            <div class="h3">Company</div>
+                            <ul>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="history.html">Our history</a></li>
+                                <li class="active"><a href="news.html">Blog</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="contacts.html">Contacts & Locations</a></li>
+                            </ul>
+                        </div>
+                        <div class="line animated fadeInUpSmall wow delay-04s">
+                            <div class="h3"><a href="solutions.html">Solutions</a></div>
+                            <ul>
+                                <li><a href="virtual-numbers-voice.html">Virtual Numbers: voice</a></li>
+                                <li><a href="virtual-numbers-sms.html">Virtual Numbers: SMS</a></li>
+                                <li><a href="mobile-data.html">Mobile Data</a></li>
+                                <li><a href="iot.html">IoT</a></li>
+                                <li><a href="a2p-sms.html">A2P SMS</a></li>
+                                <li><a href="microbilling.html">Micro Billing Solutions</a></li>
+                            </ul>
+                        </div>
+                        <div class="line animated fadeInUpSmall wow delay-06s">
+                            <div class="h3"><a href="projects.html">Projects</a></div>
+                            <ul>
+                                <li><a href="http://www.dott.ee/" target="_blank">DOTT</a></li>
+                                <li><a href="https://febo.mobi/" target="_blank">FEBO</a></li>
+                                <li><a href="https://cash4sms.today/" target="_blank">Cash4SMS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="mn-terms" class="animated fadeInUpSmall wow">
+                        <ul>
+                            <li><a href="terms-conditions.html">Terms and conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="we-are">Designed and built by <a href="https://proudly.ru/" target="_blank"><img src="assets/images/we_are.svg" alt="Proudly" title="Proudly"></a></div>
+                </div>
+            </div>
+        </footer>
+	</div>
+
+	<div id="modal-fadeout"></div>
+
+	<div class="modal-wrapper" id="modal-feedback">
+		<div class="modal">
+			<div class="contents">
+				<div class="h1">Contact Us</div>			
+
+				<form action="#" method="post" data-done-timeout="15">
+                    <div class="line">
+                        <div class="input-holder">
+                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
+                        	<i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
+                        	<i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                        	<input type="text" name="text" placeholder="Company" maxlength="255">
+                        	<i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                        	<i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-feedback-agreement" checked="checked"><label for="modal-feedback-agreement">I agree to the <a href="terms-conditions.html">terms and conditions</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+			</div>
+		</div>
+	</div>
+	<div class="modal-wrapper" id="modal-done">
+		<div class="modal">
+			<div class="contents">
+				<div class="h1">Thank You!</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/js/scripts.js?20"></script>
+</body>
+</html>

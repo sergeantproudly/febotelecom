@@ -1,0 +1,21 @@
+<svg width="82" height="81" viewBox="0 0 82 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="41" cy="40" r="14" stroke="#407CD4" stroke-width="2"/>
+<circle cx="41" cy="5" r="4" stroke="#407CD4" stroke-width="2"/>
+<circle cx="41" cy="18" r="2" fill="#407CD4"/>
+<circle cx="41" cy="63" r="2" fill="#407CD4"/>
+<circle cx="64" cy="40" r="2" fill="#407CD4"/>
+<circle cx="18" cy="40" r="2" fill="#407CD4"/>
+<circle cx="41" cy="76" r="4" stroke="#407CD4" stroke-width="2"/>
+<circle cx="5" cy="40" r="4" stroke="#407CD4" stroke-width="2"/>
+<circle r="4" transform="matrix(-1 0 0 1 77 40)" stroke="#407CD4" stroke-width="2"/>
+<circle cx="23" cy="9" r="4" stroke="#407CD4" stroke-width="2"/>
+<circle r="4" transform="matrix(-1 0 0 1 59 9)" stroke="#407CD4" stroke-width="2"/>
+<circle cx="23" cy="72" r="4" stroke="#407CD4" stroke-width="2"/>
+<circle r="4" transform="matrix(-1 0 0 1 59 72)" stroke="#407CD4" stroke-width="2"/>
+<circle cx="10" cy="22" r="4" stroke="#407CD4" stroke-width="2"/>
+<circle r="4" transform="matrix(-1 0 0 1 72 22)" stroke="#407CD4" stroke-width="2"/>
+<circle cx="10" cy="58" r="4" stroke="#407CD4" stroke-width="2"/>
+<circle r="4" transform="matrix(-1 0 0 1 72 58)" stroke="#407CD4" stroke-width="2"/>
+<line x1="41" y1="27" x2="41" y2="53" stroke="#407CD4" stroke-width="2" stroke-dasharray="2 2"/>
+<line x1="54" y1="40" x2="28" y2="40" stroke="#407CD4" stroke-width="2" stroke-dasharray="2 2"/>
+</svg>

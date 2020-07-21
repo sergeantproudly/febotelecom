@@ -1,0 +1,93 @@
+#cookies-notice {
+	position: fixed;
+	bottom: 2.8009535160905840286054827175209vw;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	padding: 0 2.8009535160905840286054827175209vw;
+	margin: 0 auto;
+	max-width: none;
+	min-height: 0;
+
+	@media (max-width: $adaptive-width-mobile) {
+		bottom: 4.4vw;
+		padding: 0 4.4vw;
+	}
+
+	& > .wrapper {
+		position: relative;
+		max-width: 71.275327771156138259833134684148%;
+		padding: 1.4898688915375446960667461263409vw 1.4898688915375446960667461263409vw 0.4898688915375446960667461263409vw;
+		margin: 0 auto;
+		background: rgb(6, 55, 139);
+		background: rgba(6, 55, 139, 0.62);
+		@include font-size(16);
+		line-height: 1.28;
+		text-align: center;
+		box-sizing: border-box;
+		@include radius(10px);
+
+		@media (max-width: $adaptive-width-tablet) {
+			@include font-size(15);
+			padding: 2.4898688915375446960667461263409vw 2.4898688915375446960667461263409vw 0.4898688915375446960667461263409vw;
+		}
+
+		@media (max-width: $adaptive-width-mobile) {
+			max-width: none;
+			padding: 3.4898688915375446960667461263409vw 3.4898688915375446960667461263409vw 1.4898688915375446960667461263409vw;
+			@include font-size(14);
+		}
+	}
+
+	p {		
+		display: inline-block;
+		vertical-align: middle;
+		cursor: default;
+		color: rgba(255, 255, 255, 0.6);
+		margin-bottom: 1vw;
+
+		@media (max-width: $adaptive-width-tablet) {
+			display: block;
+			margin-bottom: 2vw;
+		}
+
+		@media (max-width: $adaptive-width-mobile) {
+		 	margin-bottom: 4.6vw;
+		}
+
+		& > a {
+			color: rgba(255, 255, 255, 0.6);
+
+			&:hover {
+				color: rgba(255, 255, 255, 1);
+			}
+		}
+	}
+
+	.btn {
+		display: inline-block;
+		vertical-align: middle;
+		@include font-size(13);
+		padding: 0.67473182359952324195470798569726vw 1.5646007151370679380214541120381vw;
+		white-space: nowrap;
+		min-width: 0;
+		text-transform: uppercase;
+		margin: 0 0 1vw 1.4131108462455303933253873659118vw;
+
+		@media (max-width: $adaptive-width-tablet) {
+			@include font-size(14);
+			padding: 1.57473182359952324195470798569726vw 2.1646007151370679380214541120381vw;
+			margin-left: 0;
+		}
+
+		@media (max-width: $adaptive-width-tablet) {
+			margin-bottom: 2vw;
+		}
+
+		@media (max-width: $adaptive-width-mobile) {
+			@include font-size(13);
+			padding: 3vw 4.5vw;
+		 	margin-bottom: 3vw;
+		}
+	}
+}

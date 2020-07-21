@@ -1,0 +1,15 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="13.8593" height="1.73242" transform="matrix(-0.707107 0.707107 0.707107 0.707107 10.8008 40.1992)" fill="#155FCD"/>
+<rect width="13.8593" height="1.73242" transform="matrix(0.707107 0.707107 0.707107 -0.707107 1.00195 50)" fill="#155FCD"/>
+<rect x="40.2031" y="10.8008" width="13.8593" height="1.73242" transform="rotate(-45 40.2031 10.8008)" fill="#155FCD"/>
+<rect x="15.0656" y="36.3525" width="30.2561" height="0.866209" transform="rotate(-45 15.0656 36.3525)" stroke="#9BA7BF" stroke-width="0.866209" stroke-dasharray="2 2"/>
+<rect x="84.618" y="63.2246" width="30.2561" height="0.866209" transform="rotate(135 84.618 63.2246)" stroke="#9BA7BF" stroke-width="0.866209" stroke-dasharray="2 2"/>
+<rect x="-0.612502" y="5.16301e-08" width="30.2561" height="0.866209" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 84.1868 35.5737)" stroke="#9BA7BF" stroke-width="0.866209" stroke-dasharray="2 2"/>
+<rect x="0.612502" y="-5.16301e-08" width="30.2561" height="0.866209" transform="matrix(0.707107 0.707107 0.707107 -0.707107 14.6325 63.1392)" stroke="#9BA7BF" stroke-width="0.866209" stroke-dasharray="2 2"/>
+<rect x="50.002" y="1" width="13.8593" height="1.73242" transform="rotate(45 50.002 1)" fill="#155FCD"/>
+<rect width="13.8593" height="1.73242" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 89.1992 59.8008)" fill="#155FCD"/>
+<rect width="13.8593" height="1.73242" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 98.998 50)" fill="#155FCD"/>
+<rect x="59.7969" y="89.2012" width="13.8593" height="1.73242" transform="rotate(135 59.7969 89.2012)" fill="#155FCD"/>
+<rect x="49.9961" y="99.002" width="13.8593" height="1.73242" transform="rotate(-135 49.9961 99.002)" fill="#155FCD"/>
+<path d="M46.9 44.3108C44.9 41.2108 41.4 39.1108 37.3 39.1108C31.1 39.0108 26 44.1108 26 50.4108C26 56.5108 30.8 61.5108 36.9 61.8108C37.1 61.8108 37.2 61.8108 37.4 61.8108C37.4 61.8108 46.3 62.6108 50 50.4108C53.7 38.2108 62.6 39.0108 62.6 39.0108C62.9 39.0108 63.2 39.0108 63.5 39.0108C69.4 39.5108 74 44.4108 74 50.4108C74 56.7108 68.9 61.8108 62.6 61.8108C58.6 61.8108 55.1 59.7108 53 56.6108" stroke="#155FCD" stroke-width="2" stroke-miterlimit="10"/>
+</svg>

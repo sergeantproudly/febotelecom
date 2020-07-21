@@ -1,0 +1,4 @@
+Order Allow,Deny
+Allow from All
+AddDefaultCharset UTF-8
+RewriteEngine Off

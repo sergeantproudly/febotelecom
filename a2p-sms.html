@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+	<link rel="manifest" href="assets/images/site.webmanifest">
+	<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="msapplication-TileColor" content="#0d2c57">
+	<meta name="msapplication-config" content="assets/images/browserconfig.xml">
+	<meta name="theme-color" content="#06378B">
+	<title>FEBO TELECOM</title>
+	<style type="text/css">
+        #page-preloader {
+            position: fixed;
+            bottom: 0;            
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #06378B;
+            z-index: 1000;
+            opacity: 1;
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+        }
+        #page-preloader.release {
+            height: 0;
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+        }
+        #page-preloader.top {
+        	bottom: auto;
+        	top: 0;
+        }
+        #page-preloader .loader {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            width: 121px;
+            height: 192px;
+            margin: -96px 0 0 -60px;
+        }
+        #page-preloader .loader .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #page-preloader .loader .container .lh1 {
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	width: 104px;
+        	height: 104px;
+        	opacity: 0;
+        	background: url('assets/images/logo_lh1.svg') no-repeat;
+        	background-size: contain;
+			z-index: 1003;
+			-webkit-transform: translate3d(-200px, 16px, 0);
+			transform: translate3d(-200px, 16px, 0);
+
+        }
+        #page-preloader .loader .container .lh2 {
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	width: 118px;
+        	height: 118px;
+        	opacity: 0;
+        	background: url('assets/images/logo_lh2.svg?1') no-repeat;
+        	background-size: contain;
+			z-index: 1001;
+			-webkit-transform: translate3d(-200px, 0, 0);
+			transform: translate3d(-200px, 0, 0);
+        }
+        #page-preloader .loader .container .r {
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	width: 121px;
+        	height: 118px;
+        	opacity: 0;
+        	background: url('assets/images/logo_r.svg?1') no-repeat;
+        	background-size: contain;
+			z-index: 1002;
+			-webkit-transform: translate3d(200px, 0, 0);
+			transform: translate3d(200px, 0, 0);
+        }
+        #page-preloader .loader .container .txt {
+        	position: absolute;
+        	top: 149px;
+        	left: 0;
+        	width: 109px;
+        	height: 44px;
+        	background: url('assets/images/logo_txt.svg') no-repeat;
+        	background-size: contain;
+        	opacity: 0;
+        	-webkit-transform: translate3d(6px, 5px, 0);
+			transform: translate3d(6px, 5px, 0);
+			z-index: 1001;
+        }
+        #page-preloader.animate .loader .container .lh1 {
+        	-webkit-transform: translate3d(1px, 15px, 0);
+			transform: translate3d(1px, 15px, 0);
+			opacity: 1;
+			-webkit-transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition: transform 1s ease, opacity 0.8s ease;
+               -moz-transition: transform 1s ease, opacity 0.8s ease;
+                 -o-transition: transform 1s ease, opacity 0.8s ease;
+                    transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition-delay: 0.5s;
+            -o-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+        }
+        #page-preloader.animate .loader .container .lh2 {
+        	-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+        	-webkit-transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition: transform 1s ease, opacity 0.8s ease;
+               -moz-transition: transform 1s ease, opacity 0.8s ease;
+                 -o-transition: transform 1s ease, opacity 0.8s ease;
+                    transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition-delay: 0.5s;
+            -o-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+        }
+        #page-preloader.animate .loader .container .r {
+        	-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+        	-webkit-transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition: transform 1s ease, opacity 0.8s ease;
+               -moz-transition: transform 1s ease, opacity 0.8s ease;
+                 -o-transition: transform 1s ease, opacity 0.8s ease;
+                    transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition-delay: 0.5s;
+            -o-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+        }
+        #page-preloader.animate .loader .container .txt {
+        	-webkit-transform: translate3d(6px, 0, 0);
+			transform: translate3d(6px, 0, 0);
+			opacity: 1;
+        	-webkit-transition: all 0.6s ease;
+            -webkit-transition: all 0.6s ease;
+               -moz-transition: all 0.6s ease;
+                 -o-transition: all 0.6s ease;
+                    transition: all 0.6s ease;
+            -webkit-transition-delay: 1.5s;
+            -o-transition-delay: 1.5s;
+            -moz-transition-delay: 1.5s;
+            transition-delay: 1.5s;
+        }
+        #page-preloader.released .loader {
+        	opacity: 0;
+        	-webkit-transition: opacity 0.4s ease;
+            -webkit-transition: opacity 0.4s ease;
+               -moz-transition: opacity 0.4s ease;
+                 -o-transition: opacity 0.4s ease;
+                    transition: opacity 0.4s ease;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css?20"/>
+</head>
+
+<body class="cs-darkblue">
+	<div id="page-preloader">
+        <div class="loader">
+            <div class="container">
+	            <div class="lh1"></div>
+	            <div class="lh2"></div>
+	            <div class="r"></div>
+	            <div class="txt"></div>
+            </div>
+        </div>
+    </div>
+
+	<div id="layout">
+		<header>
+			<div>
+				<a href="/" id="logo" class="animated fadeInDownSmall wow"><img src="assets/images/logo.svg" alt="FEBO TELECOM" title="FEBO TELECOM"></a>
+
+				<div id="buttons" class="animated fadeInDownSmall wow">
+					<button id="btn-contact" class="js-modal-link" data-target="#modal-feedback"><span>Contact us</span></button>
+					<button id="btn-profile"><span>Login</span></button>
+					<button id="btn-burger"><span>Menu</span></button>
+				</div>
+			</div>
+		</header>
+
+		<nav id="mn-main">
+			<ul class="animated fadeInRightSmall wow">
+				<li><a href="/">Home</a></li>
+				<li><a href="projects.html">Projects</a></li>
+				<li class="active"><a href="solutions.html">Solutions</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contacts.html">Contacts</a></li>
+				<li><a href="history.html">Our history</a></li>
+			</ul>
+			<ul class="ext animated fadeInRightSmall wow delay-02s">
+				<li><a href="news.html">News</a></li>
+				<li><a href="events.html">Events</a></li>
+				<li><a href="careers.html">Careers</a></li>
+				<li><a href="partners.html">Partners</a></li>
+			</ul>
+		</nav>
+
+		<section class="content section" id="service">
+			<div class="holder">
+				<h1 class="animated fadeInUpSmall wow">A2P SMS Service</h1>
+
+                <div class="text animated fadeInUpSmall wow delay-03s">
+                    <p>A2P SMS extends the power of your apps to reach your customers and support your marketing, sales, and customer service departments.</p>
+                </div>
+			</div>
+
+            <div class="waves lightblue">
+                <svg preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 150">
+                    <path d="M0.00,49.98 C231.09,196.87 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+                    <path d="M0.00,49.98 C149.26,-44.92 281.32,218.58 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="display:none"></path>
+                </svg>
+            </div>
+		</section>
+
+        <div class="content section lightblue" data-bg-inversion="true">
+            <div class="holder">
+                <div id="a2p">
+                    <div class="bl-info">
+                        <h2>Easier and More <br>Connected Than Ever</h2>
+                        <div class="text">
+                            <p>A2P or Application-to-Person SMS is the technology of sending messages from an application to the user via SMS. Businesses use A2P for effective touchpoints with customers.</p>
+                        </div>
+
+                        <div class="mockup">
+                            <div class="item1 animated fadeInUpSmall wow delay-03s"></div>
+                            <div class="item2 animated fadeInUpSmall wow delay-06s"></div>
+                            <div class="item3 animated fadeInUpSmall wow delay-09s"></div>
+                        </div>
+                    </div>
+
+                    <div class="bl-discover dott">
+                        <h3>Discover our project DOTT</h3>
+                        <p>DOTT is our powerful A2P SMS platform. See how it works.</p>
+                        <a href="http://www.dott.ee/" target="_blank"><button class="btn"><span>Open website</span></button></a>
+                    </div>
+
+                    <div class="bl-how-works">
+                        <h2>How it works?</h2>
+
+                        <ol>
+                            <li class="info1">
+                                <h3>Create your message</h3>
+                                <p>Compose your SMS content based on your goals and strategy</p>
+                            </li>
+                            <li class="info2">
+                                <h3>Use sender ID</h3>
+                                <p>Select your customer segments</p>
+                            </li>
+                            <li class="info3">
+                                <h3>Setup data and time</h3>
+                                <p>Choose when and how often your messages will be sent</p>
+                            </li>
+                            <li class="info4">
+                                <h3>Add the names and send</h3>
+                                <p>Personalize for a charismatic customer experience.</p>
+                            </li>
+                        </ol>
+                    </div>                    
+                </div>
+            </div> 
+
+            <div class="waves white">
+                <svg preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 150">
+                    <path d="M0.00,49.98 C231.09,196.87 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+                    <path d="M0.00,49.98 C149.26,-44.92 281.32,218.58 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="display:none"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="content section white" data-bg-inversion="true">
+            <div class="holder">
+                <div class="bl-who-needs">
+                    <h2 class="animated fadeInUpSmall wow">Who needs A2P?</h2>
+                    <div class="text animated fadeInUpSmall wow delay-03s">
+                        <p>Today's customers expect personalized, multi-channel experiences. Don't expect them to come to you through your app. Come to them via SMS.</p>
+                    </div>
+
+                    <div class="tabs-block">
+                        <div class="tabs">
+                            <ul>
+                                <li><a href="#game-industry">Game Industry</a></li>
+                                <li><a href="#e-commerce">E-Commerce</a></li>
+                                <li><a href="#small-buisness">Small Buisness</a></li>
+                                <li><a href="#online-services">Online Services</a></li>
+                                <li><a href="#logistics">Logistics</a></li>
+                                <li><a href="#banks-insuruance">Banks &amp; Insuruance</a></li>
+                            </ul>
+                        </div>
+                        <div class="container">
+                            <div id="game-industry">
+                                <h3>Game Industry</h3>
+                                
+                                <div class="text">
+                                    <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
+                                </div>
+
+                                <button class="btn"><span>Contact an Expert</span></button>
+                            </div>
+                            <div id="e-commerce">
+                                <h3>E-Commerce</h3>
+                                
+                                <div class="text">
+                                    <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
+                                </div>
+
+                                <button class="btn"><span>Contact an Expert</span></button>
+                            </div>
+                            <div id="small-buisness">
+                                <h3>Small Buisness</h3>
+                                
+                                <div class="text">
+                                    <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
+                                </div>
+
+                                <button class="btn"><span>Contact an Expert</span></button>
+                            </div>
+                            <div id="online-services">
+                                <h3>Online Services</h3>
+                                
+                                <div class="text">
+                                    <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
+                                </div>
+
+                                <button class="btn"><span>Contact an Expert</span></button>
+                            </div>
+                            <div id="logistics">
+                                <h3>Logistics</h3>
+                                
+                                <div class="text">
+                                    <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
+                                </div>
+
+                                <button class="btn"><span>Contact an Expert</span></button>
+                            </div>
+                            <div id="banks-insuruance">
+                                <h3>Banks &amp; Insuruance</h3>
+                                
+                                <div class="text">
+                                    <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
+                                </div>
+
+                                <button class="btn"><span>Contact an Expert</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="waves lightblue">
+                <svg preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 150">
+                    <path d="M0.00,49.98 C231.09,196.87 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+                    <path d="M0.00,49.98 C149.26,-44.92 281.32,218.58 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="display:none"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="content section lightblue" data-bg-inversion="true" id="a2p-2">
+            <div class="holder">
+                <div class="bl-features">
+                    <h2 class="animated fadeInUpSmall wow">Features</h2>
+                    <div class="text animated fadeInUpSmall wow delay-03s">
+                        <p>Our SMS-enabled numbers are powered by FEBO's local and international network and industry-leading technology for data forwarding, easily integrating with your existing systems. </p>
+                    </div>
+
+                    <ul>
+                        <li class="feature1 animated fadeInUpSmall wow">Interactive voice response</li>
+                        <li class="feature2 animated fadeInUpSmall wow delay-03s">High-definition voice-first experiences</li>
+                        <li class="feature3 animated fadeInUpSmall wow delay-06s">Embed voice capabilities into your website</li>
+                        <li class="feature4 animated fadeInUpSmall wow delay-09s">Safeguard platform users’ privacy</li>
+                    </ul>
+                </div>
+
+                <div class="bl-request">
+                    <h3>Request Pricing</h3>
+                    <p>Get the A2P SMS capabilities you need for text campaigns, at scale.</p>
+                    <button class="btn"><span>Contact an Expert</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content section blue">
+            <div class="holder">
+                <div class="bl-advantages">
+                    <h2 class="animated fadeInUpSmall wow">Our Advantages</h2>
+
+                    <ul>
+                        <li class="advantage1">
+                            <h3 class="animated fadeInUpSmall wow">Expertise</h3>
+                            <div class="text animated fadeInUpSmall wow delay-03s">
+                                <p>FEBO's infrastructure and sophisticated network capabilities combine data and SMS into a powerful A2P SMS platform.</p>
+                            </div>
+                        </li>
+                        <li class="advantage2">
+                            <h3 class="animated fadeInUpSmall wow delay-03s">Support</h3>
+                            <div class="text animated fadeInUpSmall wow delay-06s">
+                                <p>Local and international SMS network backed by FEBO's 24/7/365 Customer Support. </p>
+                            </div>
+                        </li>
+                        <li class="advantage3">
+                            <h3 class="animated fadeInUpSmall wow delay-06s">Tools</h3>
+                            <div class="text animated fadeInUpSmall wow delay-09s">
+                                <p>Intuitive, UX-focused, and powerful management platform for easy configuration, integration, and real-time insights.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="waves darkblue">
+                <svg preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 150">
+                    <path d="M0.00,49.98 C231.09,196.87 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+                    <path d="M0.00,49.98 C149.26,-44.92 281.32,218.58 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="display:none"></path>
+                </svg>
+            </div>
+        </div>
+
+		<div id="bl-feedback" class="darkblue">
+			<div class="holder">
+				<h2 class="animated fadeInUpSmall wow">Contact Us</h2>
+
+				<form action="#" method="post">
+                    <div class="line animated fadeInUpSmall wow">
+                        <div class="input-holder">
+                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
+                        	<i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
+                        	<i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                        	<input type="text" name="text" placeholder="Company" maxlength="255">
+                        	<i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd animated fadeInUpSmall wow">
+                        <div class="input-holder">
+                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                        	<i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <div class="cb-line animated fadeInUpSmall wow"><input type="checkbox" name="agreement" id="feedback-agreement" checked="checked"><label for="feedback-agreement">I agree to the <a href="terms-conditions.html">terms and conditions</a></label></div>
+                    <div class="btn-line animated fadeInUpSmall wow delay-02s"><button class="btn"><span>Send</span></button></div>
+                </form>
+			</div>
+		</div>
+
+		<footer>
+            <div class="holder">
+                <div class="wrap">
+                    <a href="/" id="logo-footer" class="animated fadeInUpSmall wow"><img src="assets/images/logo_short.svg" alt="FEBO TELECOM LTD" title="FEBO TELECOM LTD"></a>
+                    <div id="copyright" class="animated fadeInUpSmall wow">&copy; 2012 - 2020 FEBO TELECOM LTD <br>All rights reserved</div>
+
+                    <div id="mn-bottom">
+                        <div class="line animated fadeInUpSmall wow delay-02s">
+                            <div class="h3">Company</div>
+                            <ul>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="history.html">Our history</a></li>
+                                <li><a href="news.html">Blog</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="contacts.html">Contacts & Locations</a></li>
+                            </ul>
+                        </div>
+                        <div class="line animated fadeInUpSmall wow delay-04s">
+                            <div class="h3"><a href="solutions.html">Solutions</a></div>
+                            <ul>
+                                <li><a href="virtual-numbers-voice.html">Virtual Numbers: voice</a></li>
+                                <li><a href="virtual-numbers-sms.html">Virtual Numbers: SMS</a></li>
+                                <li><a href="mobile-data.html">Mobile Data</a></li>
+                                <li><a href="iot.html">IoT</a></li>
+                                <li class="active"><a href="a2p-sms.html">A2P SMS</a></li>
+                                <li><a href="microbilling.html">Micro Billing Solutions</a></li>
+                            </ul>
+                        </div>
+                        <div class="line animated fadeInUpSmall wow delay-06s">
+                            <div class="h3"><a href="projects.html">Projects</a></div>
+                            <ul>
+                                <li><a href="http://www.dott.ee/" target="_blank">DOTT</a></li>
+                                <li><a href="https://febo.mobi/" target="_blank">FEBO</a></li>
+                                <li><a href="https://cash4sms.today/" target="_blank">Cash4SMS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="mn-terms" class="animated fadeInUpSmall wow">
+                        <ul>
+                            <li><a href="terms-conditions.html">Terms and conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="we-are">Designed and built by <a href="https://proudly.ru/" target="_blank"><img src="assets/images/we_are.svg" alt="Proudly" title="Proudly"></a></div>
+                </div>
+            </div>
+        </footer>
+	</div>
+
+	<div id="modal-fadeout"></div>
+
+	<div class="modal-wrapper" id="modal-feedback">
+		<div class="modal">
+			<div class="contents">
+				<div class="h1">Contact Us</div>			
+
+				<form action="#" method="post" data-done-timeout="15">
+                    <div class="line">
+                        <div class="input-holder">
+                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
+                        	<i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
+                        	<i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                        	<input type="text" name="text" placeholder="Company" maxlength="255">
+                        	<i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                        	<i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-feedback-agreement" checked="checked"><label for="modal-feedback-agreement">I agree to the <a href="terms-conditions.html">terms and conditions</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+			</div>
+		</div>
+	</div>
+	<div class="modal-wrapper" id="modal-done">
+		<div class="modal">
+			<div class="contents">
+				<div class="h1">Thank You!</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/js/scripts.js?20"></script>
+</body>
+</html>

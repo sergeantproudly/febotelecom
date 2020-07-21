@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+	<link rel="manifest" href="assets/images/site.webmanifest">
+	<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="msapplication-TileColor" content="#0d2c57">
+	<meta name="msapplication-config" content="assets/images/browserconfig.xml">
+	<meta name="theme-color" content="#06378B">
+	<title>FEBO TELECOM</title>
+	<style type="text/css">
+        #page-preloader {
+            position: fixed;
+            bottom: 0;            
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #06378B;
+            z-index: 1000;
+            opacity: 1;
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+        }
+        #page-preloader.release {
+            height: 0;
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition: all 500ms cubic-bezier(0.080, 0.980, 0.410, 1.01);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1);
+            -webkit-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+               -moz-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                 -o-transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+                    transition-timing-function: cubic-bezier(0.080, 0.980, 0.410, 1.01);
+        }
+        #page-preloader.top {
+        	bottom: auto;
+        	top: 0;
+        }
+        #page-preloader .loader {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            width: 121px;
+            height: 192px;
+            margin: -96px 0 0 -60px;
+        }
+        #page-preloader .loader .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #page-preloader .loader .container .lh1 {
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	width: 104px;
+        	height: 104px;
+        	opacity: 0;
+        	background: url('assets/images/logo_lh1.svg') no-repeat;
+        	background-size: contain;
+			z-index: 1003;
+			-webkit-transform: translate3d(-200px, 16px, 0);
+			transform: translate3d(-200px, 16px, 0);
+
+        }
+        #page-preloader .loader .container .lh2 {
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	width: 118px;
+        	height: 118px;
+        	opacity: 0;
+        	background: url('assets/images/logo_lh2.svg?1') no-repeat;
+        	background-size: contain;
+			z-index: 1001;
+			-webkit-transform: translate3d(-200px, 0, 0);
+			transform: translate3d(-200px, 0, 0);
+        }
+        #page-preloader .loader .container .r {
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	width: 121px;
+        	height: 118px;
+        	opacity: 0;
+        	background: url('assets/images/logo_r.svg?1') no-repeat;
+        	background-size: contain;
+			z-index: 1002;
+			-webkit-transform: translate3d(200px, 0, 0);
+			transform: translate3d(200px, 0, 0);
+        }
+        #page-preloader .loader .container .txt {
+        	position: absolute;
+        	top: 149px;
+        	left: 0;
+        	width: 109px;
+        	height: 44px;
+        	background: url('assets/images/logo_txt.svg') no-repeat;
+        	background-size: contain;
+        	opacity: 0;
+        	-webkit-transform: translate3d(6px, 5px, 0);
+			transform: translate3d(6px, 5px, 0);
+			z-index: 1001;
+        }
+        #page-preloader.animate .loader .container .lh1 {
+        	-webkit-transform: translate3d(1px, 15px, 0);
+			transform: translate3d(1px, 15px, 0);
+			opacity: 1;
+			-webkit-transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition: transform 1s ease, opacity 0.8s ease;
+               -moz-transition: transform 1s ease, opacity 0.8s ease;
+                 -o-transition: transform 1s ease, opacity 0.8s ease;
+                    transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition-delay: 0.5s;
+            -o-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+        }
+        #page-preloader.animate .loader .container .lh2 {
+        	-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+        	-webkit-transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition: transform 1s ease, opacity 0.8s ease;
+               -moz-transition: transform 1s ease, opacity 0.8s ease;
+                 -o-transition: transform 1s ease, opacity 0.8s ease;
+                    transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition-delay: 0.5s;
+            -o-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+        }
+        #page-preloader.animate .loader .container .r {
+        	-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+        	-webkit-transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition: transform 1s ease, opacity 0.8s ease;
+               -moz-transition: transform 1s ease, opacity 0.8s ease;
+                 -o-transition: transform 1s ease, opacity 0.8s ease;
+                    transition: transform 1s ease, opacity 0.8s ease;
+            -webkit-transition-delay: 0.5s;
+            -o-transition-delay: 0.5s;
+            -moz-transition-delay: 0.5s;
+            transition-delay: 0.5s;
+        }
+        #page-preloader.animate .loader .container .txt {
+        	-webkit-transform: translate3d(6px, 0, 0);
+			transform: translate3d(6px, 0, 0);
+			opacity: 1;
+        	-webkit-transition: all 0.6s ease;
+            -webkit-transition: all 0.6s ease;
+               -moz-transition: all 0.6s ease;
+                 -o-transition: all 0.6s ease;
+                    transition: all 0.6s ease;
+            -webkit-transition-delay: 1.5s;
+            -o-transition-delay: 1.5s;
+            -moz-transition-delay: 1.5s;
+            transition-delay: 1.5s;
+        }
+        #page-preloader.released .loader {
+        	opacity: 0;
+        	-webkit-transition: opacity 0.4s ease;
+            -webkit-transition: opacity 0.4s ease;
+               -moz-transition: opacity 0.4s ease;
+                 -o-transition: opacity 0.4s ease;
+                    transition: opacity 0.4s ease;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css?20"/>
+</head>
+
+<body class="cs-darkblue">
+	<div id="page-preloader">
+        <div class="loader">
+            <div class="container">
+	            <div class="lh1"></div>
+	            <div class="lh2"></div>
+	            <div class="r"></div>
+	            <div class="txt"></div>
+            </div>
+        </div>
+    </div>
+
+	<div id="layout">
+		<header>
+			<div>
+				<a href="/" id="logo" class="animated fadeInDownSmall wow"><img src="assets/images/logo.svg" alt="FEBO TELECOM" title="FEBO TELECOM"></a>
+
+				<div id="buttons" class="animated fadeInDownSmall wow">
+					<button id="btn-contact" class="js-modal-link" data-target="#modal-feedback"><span>Contact us</span></button>
+					<button id="btn-profile"><span>Login</span></button>
+					<button id="btn-burger"><span>Menu</span></button>
+				</div>
+			</div>
+		</header>
+
+		<nav id="mn-main">
+			<ul class="animated fadeInRightSmall wow">
+				<li><a href="/">Home</a></li>
+				<li><a href="projects.html">Projects</a></li>
+				<li><a href="solutions.html">Solutions</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contacts.html">Contacts</a></li>
+				<li><a href="history.html">Our history</a></li>
+			</ul>
+			<ul class="ext animated fadeInRightSmall wow delay-02s">
+				<li class="active"><a href="news.html">News</a></li>
+				<li><a href="events.html">Events</a></li>
+				<li><a href="careers.html">Careers</a></li>
+				<li><a href="partners.html">Partners</a></li>
+			</ul>
+		</nav>
+
+		<section class="content section" id="new">
+            <div class="waves white">
+                <svg preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 150">
+                    <path d="M0.00,49.98 C231.09,196.87 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+                    <path d="M0.00,49.98 C149.26,-44.92 281.32,218.58 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="display:none"></path>
+                </svg>
+            </div>
+		</section>
+
+        <div class="content section white" data-bg-inversion="true">
+            <div class="holder">
+                <div id="new-content">
+                    <h1>Privacy and Cookies Policy</h1>
+
+                    <p><strong>PRIVACY POLICY</strong></p>
+
+                    <p>Last updated: 01 May 2019</p>
+                    <p>FEBO Telecom Ltd.</p>
+                    <p><a href="http://www.febotele.com">www.febotele.com</a></p>
+                    <p>Office 602, 6th floor, Apollo Court, 232 Arch. Makariou III Ave., Limassol, 3030, Cyprus</p>
+                    <p>dpo@febotele.com</p>
+                    <p>Tel. +357 250 304 68</p>
+
+                    <p>At FEBO Telecom Ltd. we respect the confidentiality of our clients&rsquo; personal information
+                        and thus we are
+                        committed to safeguard the security of any information FEBO Telecom Ltd. is provided with by our
+                        prospective and
+                        / or existing clients as well as by individual visitors of our corporate website <a
+                            href="http://www.febotele.com">www.febotele.com</a>, i.e. this website. This code of
+                        confidentiality applies
+                        for any further information, which a new client or respectively an existing client provides FEBO
+                        Telecom Ltd.
+                        within the course of electronic and physical correspondence with FEBO Telecom Ltd.</p>
+
+                    <p><strong>Collection of Personal Information </strong></p>
+                    <p>In order to provide our communication services to our clients efficiently and accurately, when
+                        each new client
+                        applies to register to use our technical services, we ask of them to submit certain personal
+                        information to FEBO
+                        Telecom Ltd. during the client's assessment This includes personal data, which is related to a
+                        specific and
+                        individual prospective and / or existing clients as well as to the representative(s) and / or
+                        Universal
+                        Beneficiary Owner (UBO/s) of a client.</p>
+
+                    <p>The term 'data subject' applies to clients of FEBO Telecom Ltd. Data subjects are all physical
+                        persons. Clients
+                        of FEBO Telecom Ltd., which are in the form of legal persons, are represented by their local
+                        Management and / or
+                        Universal Beneficial Owner(s) (UBO) and hence by individual persons. Therefore, the personal
+                        data collected from
+                        our clients can include information about the physical and legal persons full name, date of
+                        birth, home and work
+                        addresses and telephone numbers, email address, passport number/or ID number, marital status,
+                        government issued
+                        photo ID with signature and financial information such as audited financial statements of a
+                        legal entity,
+                        showing income situations. The disclosure of the information as mentioned within this paragraph
+                        to FEBO Telecom
+                        Ltd. is to be submitted willingly by the prospective and / or existing client and requires the
+                        explicit consent
+                        of that specific client or client representative(s).</p>
+
+                    <p>Besides the above, we may also gather certain information about the clients' use of our services.
+                        This may
+                        include information from which they can be identified, such as the times they log on (for
+                        instance, IP address,
+                        type of computer or telecommunication device used for accessing our corporate website,
+                        geographical location and
+                        internet access service provider of an individual visitor), their volume of use of our corporate
+                        website, the
+                        types of data, systems and reports they access, duration of sessions and other similar data.
+                        This data as
+                        described in this paragraph is collected automatically by the IT infrastructure of FEBO Telecom
+                        Ltd.</p>
+
+                    <p>At FEBO Telecom Ltd., incoming and outgoing telephone calls may be recorded for training and
+                        monitoring purposes.
+                    </p>
+
+                    <p>In line with the requirements of the Data Protection Regulation 679/2016/EU, FEBO Telecom Ltd.
+                        fulfils the role
+                        of the Data Controller with regards to all data that the company collects from individual
+                        visitors of our
+                        corporate website www.febotele.com, as well as from all physical and electronic correspondence
+                        between our
+                        prospective and / or existing clients and FEBO Telecom Ltd.</p>
+                    <p><strong>&nbsp;</strong></p>
+                    <p><strong>What information is collected?</strong></p>
+                    <p>Data to be collected:</p>
+
+                    <p>Via the corporate website <a href="http://www.febotele.com">www.febotele.com</a>, our IT
+                        infrastructure may
+                        collect the following data related to individual visitors of our corporate website:</p>
+
+                    <p>- IP address of website visitor</p>
+                    <p>- Geographic location of website visitor</p>
+                    <p>- Internet Access Service provider of website visitor</p>
+                    <p>- Type of computer or telecommunication device used by website visitor</p>
+                    <p>- Frequency and duration of sessions per page visit by website visitor</p>
+                    <p>- Data and documents of website accessed by website visitor</p>
+
+                    <p>Via the contact by electronic mail services, the following data may be collected:</p>
+
+                    <p>- Name</p>
+                    <p>- Surname</p>
+                    <p>- Contact email address</p>
+                    <p>- Contact telephone number(s)</p>
+                    <p>- Title (Mr.; Ms.; Mrs.; Dr.; Prof.)</p>
+                    <p>- any additional information disclosed by the message submitted via the contact form</p>
+
+                    <p>By entering into a business relationship and in the course of correspondence in physical or
+                        electronic form with
+                        FEBO Telecom Ltd., the following personal data may be collected:</p>
+
+                    <p><u>From corporate clients</u></p>
+                    <p>- Certificate of incorporation</p>
+                    <p>- Certificate of shareholders</p>
+                    <p>- Certificate of registered address</p>
+                    <p>- Resolution of Directors</p>
+                    <p>- Certificate of Incumbency</p>
+                    <p>- Certificate of good standing</p>
+                    <p>- Audited financial statements</p>
+                    <p>- Copies of Licenses granted to the corporate entity</p>
+                    <p>- Information on corporate bank account numbers</p>
+                    <p>- Set of contact data of corporate entity</p>
+                    <p>- Set of contact data of employees and / or local management and / or Universal beneficial Owner
+                    </p>
+
+                    <p><u>From individual clients and individuals representing a corporate client</u></p>
+                    <p>- Copy of Passport</p>
+                    <p>- Copy of ID card</p>
+                    <p>- Proof of physical address of an individual</p>
+                    <p>- Information and documents related to an individual's profession and /or employment</p>
+                    <p>- Documents on the Financial status of an individual</p>
+                    <p>- Professional certificates of an individual's professional background</p>
+                    <p>- Documents regarding the educational background of an individual</p>
+                    <p>- Documents related to the origin of wealth of an individual</p>
+                    <p>- Contact telephone number(s) related to an individual</p>
+                    <p>- Electronic mail address related to an individual</p>
+
+
+                    <p><strong>Uses Made Of Your Personal Information </strong></p>
+                    <p>We at FEBO Telecom Ltd. collect information from our prospective and / or existing clients in
+                        order to enable us
+                        to administer, support, and obtain feedback on our services, to identify and prevent faults with
+                        our services
+                        and the corporate website of FEBO Telecom Ltd., to improve and render the communication services
+                        offered by us,
+                        to ensure we are maintaining adequate security measures, to prevent any security breaches of our
+                        website and IT
+                        infrastructure, as well as to keep prospective and / or existing clients informed about products
+                        and services
+                        that may be of interest to them. We may also use this information, for internal research and
+                        analysis purposes
+                        such as monitoring the website usage in order to help us develop the website and improve the
+                        communication
+                        services offered by FEBO Telecom Ltd.</p>
+
+                    <p>We at FEBO Telecom Ltd. also collect and process information as described in here above as to
+                        enable us to
+                        maintain legal compliance when rendering our communication services to our prospective and / or
+                        existing
+                        clients. This concerns in particular the specific identification of a prospective and / or
+                        existing client when
+                        making use of the services offered by FEBO Telecom Ltd.</p>
+
+                    <p>All use and processing of personal data, which relates to an individual visitor of our corporate
+                        website is
+                        subject to that person's (physical and legal person represented by its local management or
+                        UBO/s) explicit
+                        consent.</p>
+
+                    <p>Also, the use and processing of personal information and data, which relates to a specific
+                        prospective and / or
+                        existing client of FEBO Telecom Ltd. is strictly limited to the use as described within this
+                        privacy policy and
+                        subject to that prospective and / or existing client's explicit consent.</p>
+
+
+                    <p><strong>Further Uses Of Your Personal Information; Marketing </strong></p>
+                    <p>In addition, we may process the personal data, which is related to our clients (physical
+                        individual person or
+                        legal person as represented by its local management or UBO) for marketing purposes and there are
+                        several ways in
+                        which we at FEBO Telecom Ltd. may use the personal information we have been provided with,
+                        including the
+                        following:</p>
+
+                    <ul>
+                        <li>We may contact an individual client or the representative(s) of clients (when in the form of
+                            a legal person)
+                            in order to present services to which the client or its representative(s) do not subscribe
+                            and which may be
+                            of interest to them according to their client profile;</li>
+                        <li>We may wish to provide an individual client or the representative(s) of clients (when in the
+                            form of a legal
+                            person) with information about special features of our Site that we think may be of interest
+                            to that client
+                            or client's representative(s);</li>
+                        <li>We may provide an individual client or the representative(s) of clients (when in the form of
+                            a legal person)
+                            with information from our affiliates which we think may be of interest to that client or
+                            client's
+                            representative(s);</li>
+                        <li>We may invite an individual client or the representative(s) of clients (when in the form of
+                            a legal person)
+                            to client functions or entertainment events; and</li>
+                        <li>The above contacts may be via email, fax, post and/or telephone.</li>
+                    </ul>
+
+                    <p>If an individual client or the representative(s) of clients (when in the form of a legal person)
+                        does not or do
+                        not want us to use personal information, which is related to that client or its
+                        representative(s) specifically
+                        in this way, as an on-line subscriber, the individual client or the representative(s) of clients
+                        (when in the
+                        form of a legal person) may update the client account accordingly in order to amend the
+                        marketing preferences at
+                        any time.</p>
+
+                    <p>FEBO Telecom Ltd. has appointed a Data Protection Officer (DPO). This DPO remains independent
+                        within our
+                        corporate structure and has a direct connection to the top level management at FEBO Telecom Ltd.
+                        By submission
+                        of electronic correspondence to <a href="mailto:dpo@febotele.com">dpo@febotele.com</a>, an
+                        individual client or
+                        the representative(s) of clients (when in the form of a legal person) can get in touch with our
+                        DPO and submit a
+                        request with regards to the relevant specific personal information.</p>
+
+                    <p><strong>Your Rights to your personal data</strong></p>
+                    <p>In line with the provisions and requirements of the Data Protection Regulation 679/2016/EU on the
+                        protection of
+                        personal data, our clients (physical individual clients as well as legal persons represented by
+                        its local
+                        management or UBO/s) remain the following rights to personal data, which relates to them
+                        specifically:</p>
+
+                    <p>- The clients remain the right to review all personal information, which is related to a physical
+                        or legal entity
+                        and its representative(s) and which was / is collected during a visit of our corporate website
+                        and during the
+                        use and processing as described in this privacy policy at any time and to check the accuracy of
+                        personal data,
+                        which is related to the relevant physical or legal person and makes a physical person or legal
+                        person's
+                        representative(s) individually identifiable.</p>
+
+                    <p>- All clients of FEBO Telecom Ltd. remain the right to have done corrections, rectifications and
+                        refreshments to
+                        their specific personal data.</p>
+
+                    <p>- All clients of FEBO Telecom Ltd. remain the right to have the personal data, which relates to
+                        them as a
+                        physical person or to the legal person and /or its representative(s), deleted partly or
+                        completely.</p>
+
+                    <p>- All clients of FEBO Telecom Ltd. remain the right to obtain information on the use and purpose
+                        to process the
+                        personal data, which relates to them specifically.</p>
+
+                    <p>- All clients of FEBO Telecom Ltd. remain the right to limit the purpose for processing and use
+                        of personal data,
+                        which relates to the client or its representative(s) respectively. However, this may have an
+                        effect on the
+                        accessibility of our communication services rendered to that client. Our clients can refer to
+                        our DPO and our
+                        Compliance Department for further clarifications on this.</p>
+
+                    <p>- All clients of FEBO Telecom Ltd. remain the right to opt-out from commercial and non-commercial
+                        newsletters and
+                        notifications from FEBO Telecom Ltd. by sending a notification to our DPO accordingly.</p>
+
+                    <p>- All clients of FEBO Telecom Ltd. remain the right to have all personal data, which is related
+                        to them
+                        specifically and which is or had been collected during your visit and use of our corporate
+                        website and during
+                        the correspondence with FEBO Telecom Ltd., being transferred to another Data Controller
+                        nominated by the
+                        relevant client.</p>
+
+                    <p>- All clients of FEBO Telecom Ltd. remain the right to withdraw the previously given explicit
+                        consent with
+                        regards to the collection, use and processing of personal data, which relates to the client or
+                        its
+                        representative(s), at any time by contacting our Data Protection Officer by electronic mail
+                        services to <a href="mailto:dpo@febotele.com">dpo@febotele.com</a>.</p>
+
+                    <p>All clients of FEBO Telecom Ltd. can submit a request to make use of the above rights to personal
+                        data, which
+                        relates to that client or its representative(s) specifically, by contacting our Data Protection
+                        Officer (DPO)
+                        through electronic mail services to <a href="mailto:dpo@febotele.com">dpo@febotele.com</a>.</p>
+
+                    <p><strong>Disclosure of your information </strong>&nbsp;</p>
+                    <p>FEBO Telecom Ltd. will not disclose to any third parties any information or data, which enables
+                        the
+                        identification of our clients or the representative(s) and / or UBO(s) of clients that are in
+                        the form of a
+                        legal person, without that person's explicit consent. This applies for personal data, such as
+                        names, postal and
+                        e-mail addresses, telephone numbers, or other, which FEBO Telecom Ltd. had been provided with by
+                        an individual
+                        client or the representative(s) of clients (when in the form of a legal person).</p>
+
+                    <p>The rendering of our services to our company's prospective and / or existing clients requires the
+                        disclosure of
+                        personal data related to our prospective and / or existing customers in order to fulfil
+                        technical requirements.
+                        Hence, we may pass on information related to our prospective and / or existing clients to third
+                        parties,
+                        strictly subject to the informed consent of the data subject, to which the personal data in
+                        question relates.
+                        FEBO Telecom Ltd. ensures the confidentially treatment of all disclosed data to external
+                        parties. FEBO Telecom
+                        Ltd. will communicate the use of all personal data to an individual client or to
+                        representative(s) of clients
+                        (when in the form of a legal person) prior to its use or processing as described in this privacy
+                        policy. All
+                        clients of FEBO Telecom Ltd. remain the rights to their personal data as described within this
+                        privacy policy.
+                    </p>
+
+                    <p>Personal data, which is collected during the visit of our corporate website and by the use of the
+                        contact details
+                        in the 'contact us' section of our corporate website may be disclosed to licensors of the
+                        software used on the
+                        Site. Please refer to our Data Protection Officer (DPO) in case you have questions on this or in
+                        case you want
+                        to make use of your rights related to your personal data as described in this privacy policy.
+                    </p>
+
+                    <p>We may also disclose personal information related to an individual client or to representative(s)
+                        of clients
+                        (when in the form of a legal person) to third parties if we are under a duty to disclose or
+                        share the relevant
+                        personal data in order to comply with any legal obligation, or in order to enforce or apply our
+                        Site Terms and
+                        Conditions. Furthermore, that personal data is permitted to be disclosed to public bodies only
+                        in cases where
+                        the disclosure concerns matters of national and/or international security, the prevention or
+                        investigation of
+                        criminal activities, law enforcements, where a public interest is given, a juridical proceeding
+                        against the
+                        person, to which the personal data is related is pending or had been initiated or completed
+                        before and/or the
+                        personal security of the individual to which the personal data is related.&nbsp;</p>
+
+                    <p><strong>Your consent </strong></p>
+                    <p>By submitting your information either through our corporate website <a
+                            href="http://www.febotele.com">www.febotele.com</a> or by electronic or physical
+                        correspondence with FEBO
+                        Telecom Ltd., the individual client or the representative(s) of clients (when in the form of a
+                        legal person)
+                        consent to the use by FEBO Telecom Ltd. of that information, as set out in this policy. By
+                        accessing and using
+                        this website, an individual client or the representative(s) of clients (when in the form of a
+                        legal person)
+                        acknowledge that the client or its representative(s) have read, understood and agree with this
+                        privacy policy.
+                    </p>
+
+                    <p>You are aware that you can make use of the rights to your personal data as displayed in this
+                        privacy policy.</p>
+
+                    <p>We reserve the right to change our privacy policy from time to time and will update this page
+                        accordingly. Please
+                        review our policy as often as possible &ndash; your continued use of the Site will signify that
+                        you are made
+                        aware of any such changes.</p>
+
+                    <p>The Site may, from time to time, contain links to and from the websites of our partner networks
+                        and affiliates.
+                        If you follow a link to any of these websites, please note that these websites may have their
+                        own privacy
+                        policies and that we do not accept any responsibility or liability for these policies or the
+                        content of external
+                        websites from legally and economically independent entities. Please check these policies before
+                        you submit any
+                        personal data to these websites.</p>
+
+                    <p><strong>How we protect your information </strong></p>
+                    <p>FEBO Telecom Ltd. takes responsible to store your information in its protected physical archives
+                        and protected
+                        electronic databases for reference in order to answer queries or resolve problems, provide
+                        improved and new
+                        services and to meet any legal data retention requirements and legal compliance requirements.
+                        This means we may
+                        retain an individual client's or client's representative'(s)' (when in the form of a legal
+                        person) information
+                        after that client or its representative(s) discontinue the use of the Site or our services or
+                        otherwise
+                        interacting with us over the applicable time period of five years, starting by the date of
+                        termination of
+                        relations with FEBO Telecom Ltd.</p>
+
+                    <p>All electronic information an individual client or the representative(s) of clients (when in the
+                        form of a legal
+                        person) provide us with is stored on secure and protected servers. The transmission of
+                        information via the
+                        internet is secured using Secure Socket Layer (SSL) technology with high security 128bit
+                        encryption. Once we
+                        have received your information, we strictly follow these procedures and security features in
+                        order to prevent
+                        unauthorized access.</p>
+
+                    <p><strong>Failure to Provide Personal Information </strong></p>
+                    <p>All clients of FEBO Telecom Ltd. have a choice to supply any or all of the personal information
+                        required.
+                        However, missing information may result in FEBO Telecom Ltd. being unable to open or maintain
+                        the relevant
+                        client account and /or to provide an individual client or the representative(s) of clients (when
+                        in the form of
+                        a legal person) with our services.</p>
+
+                    <p>If you feel the rights to your personal data had been infringed by FEBO Telecom Ltd., please get
+                        in touch with
+                        our Data Protection Officer by means of electronic communication at dpo@febotele.com.</p>
+
+                    <p><strong>Cookie Policy </strong></p>
+
+                    <p>Our corporate website www.febotele.com is using cookies. A cookie is a text file in the format
+                        .txt, which the
+                        host server of our corporate website sends to the browser application that an individual visitor
+                        of our
+                        corporate website is using when entering our corporate website. It is stored locally on the hard
+                        drive of the
+                        computer or telecommunication device used by the individual visitor of our corporate website
+                        when entering our
+                        corporate website. The data written into this file includes information on the IP address
+                        (Internet Protocol),
+                        the internet access service provider, the duration and frequency of a page visit sessions within
+                        our corporate
+                        website, data which was viewed or downloaded, the type of computer or telecommunication device
+                        used by the
+                        individual visitor of our corporate website as well as the geographical location of the
+                        individual visitor of
+                        our corporate website.</p>
+
+                    <p>The data collected is read out from the cookie file by and retained on the website server / host
+                        in electronic
+                        form. The purpose for collecting this data is to identify a specific individual visitor after
+                        entering our
+                        corporate website. This data related to the individual visitor of our corporate website may be
+                        used by Simply
+                        Trust for internal statistical and analytical purpose only.</p>
+
+                    <p>By entering our corporate website www.febotele.com, we have asked you to submit your explicit
+                        consent to the
+                        cookie policy in electronic form.</p>
+                </div>
+            </div>           
+
+            <div class="waves darkblue">
+                <svg preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 150">
+                    <path d="M0.00,49.98 C231.09,196.87 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+                    <path d="M0.00,49.98 C149.26,-44.92 281.32,218.58 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="display:none"></path>
+                </svg>
+            </div>
+        </div>
+
+		<footer>
+            <div class="holder">
+                <div class="wrap">
+                    <a href="/" id="logo-footer" class="animated fadeInUpSmall wow"><img src="assets/images/logo_short.svg" alt="FEBO TELECOM LTD" title="FEBO TELECOM LTD"></a>
+                    <div id="copyright" class="animated fadeInUpSmall wow">&copy; 2012 - 2020 FEBO TELECOM LTD <br>All rights reserved</div>
+
+                    <div id="mn-bottom">
+                        <div class="line animated fadeInUpSmall wow delay-02s">
+                            <div class="h3">Company</div>
+                            <ul>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="history.html">Our history</a></li>
+                                <li class="active"><a href="news.html">Blog</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="contacts.html">Contacts & Locations</a></li>
+                            </ul>
+                        </div>
+                        <div class="line animated fadeInUpSmall wow delay-04s">
+                            <div class="h3"><a href="solutions.html">Solutions</a></div>
+                            <ul>
+                                <li><a href="virtual-numbers-voice.html">Virtual Numbers: voice</a></li>
+                                <li><a href="virtual-numbers-sms.html">Virtual Numbers: SMS</a></li>
+                                <li><a href="mobile-data.html">Mobile Data</a></li>
+                                <li><a href="iot.html">IoT</a></li>
+                                <li><a href="a2p-sms.html">A2P SMS</a></li>
+                                <li><a href="microbilling.html">Micro Billing Solutions</a></li>
+                            </ul>
+                        </div>
+                        <div class="line animated fadeInUpSmall wow delay-06s">
+                            <div class="h3"><a href="projects.html">Projects</a></div>
+                            <ul>
+                                <li><a href="http://www.dott.ee/" target="_blank">DOTT</a></li>
+                                <li><a href="https://febo.mobi/" target="_blank">FEBO</a></li>
+                                <li><a href="https://cash4sms.today/" target="_blank">Cash4SMS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="mn-terms" class="animated fadeInUpSmall wow">
+                        <ul>
+                            <li><a href="terms-conditions.html">Terms and conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="we-are">Designed and built by <a href="https://proudly.ru/" target="_blank"><img src="assets/images/we_are.svg" alt="Proudly" title="Proudly"></a></div>
+                </div>
+            </div>
+        </footer>
+	</div>
+
+	<div id="modal-fadeout"></div>
+
+	<div class="modal-wrapper" id="modal-feedback">
+		<div class="modal">
+			<div class="contents">
+				<div class="h1">Contact Us</div>			
+
+				<form action="#" method="post" data-done-timeout="15">
+                    <div class="line">
+                        <div class="input-holder">
+                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
+                        	<i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
+                        	<i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                        	<input type="text" name="text" placeholder="Company" maxlength="255">
+                        	<i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                        	<i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-feedback-agreement" checked="checked"><label for="modal-feedback-agreement">I agree to the <a href="terms-conditions.html">terms and conditions</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+			</div>
+		</div>
+	</div>
+	<div class="modal-wrapper" id="modal-done">
+		<div class="modal">
+			<div class="contents">
+				<div class="h1">Thank You!</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/js/scripts.js?20"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+@mixin size($width, $height) {
+  height: $height;
+  width: $width;
+}
+
+@mixin draw-progress($progress, $color) {
+  .pie {
+    .half-circle {
+      border-color: $color;
+      will-change: transform;
+    }
+
+    .left-side {
+      transform: rotate($progress * 3.6deg);
+    }
+
+    @if $progress <= 50 {
+      .right-side {
+        display: none;
+      }
+    } @else {
+      clip: rect(auto, auto, auto, auto);
+
+      .right-side {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@mixin pie-wrapper($size, $color, $stroke) {
+  @include size($size, $size);
+  position: relative;
+
+  .pie {
+    @include size(100%, 100%);
+    clip: rect(0, $size, $size, $size / 2);
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    .half-circle {
+      @include size(100%, 100%);
+      border: $stroke solid #3498db;
+      border-radius: 50%;
+      clip: rect(0, $size / 2, $size, 0);
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  @for $i from 0 through 100 {
+  	&[data-value="#{$i}"] {
+  		@include draw-progress($i, $color);
+  	}
+  }
+}
