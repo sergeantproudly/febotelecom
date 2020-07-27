@@ -2641,10 +2641,12 @@ footer {
 		font-size: 0;
 		display: block;
 		white-space: nowrap;
+		margin-left: -20.858164481525625744934445768772vw;
 
 		& > li {
 			display: inline-block;
 			height: 19.547vw;
+			margin-left: 0.25208581644815256257449344457688vw;
 
 			@media (max-width: $adaptive-width-tablet) {
 				height: 32.421875vw;
@@ -2652,6 +2654,10 @@ footer {
 
 			@media (max-width: $adaptive-width-mobile) {
 				height: 39.6875vw;
+			}
+
+			&:first-child {
+				margin-left: 0;
 			}
 
 			img {
@@ -4947,20 +4953,23 @@ footer {
 				content: '';
 				display: block;
 				position: absolute;
-				top: -1px;
-				right: 3px;
-				width: 32px;
-				height: 32px;
+				top: -0.059594755661501787842669845053635vw;
+				right: -0.059594755661501787842669845053635vw;
+				width: 1.9070321811680572109654350417163vw;
+				height: 1.9070321811680572109654350417163vw;
 				background: url('../images/table-edge.svg') no-repeat;
 				background-size: contain;
 
 				@media (max-width: $adaptive-width-tablet) {
-					right: 1px;
+					top: 0;
+					right: 0;
+					width: 4.1666666666666666666666666666667vw;
+					height: 4.1666666666666666666666666666667vw;
 				}
 
 				@media (max-width: $adaptive-width-mobile) {
-					top: -1px;
-					right: 1px;
+					top: -0.3125vw;
+					right: 0.3125vw;
 					width: 8.675vw;
 					height: 8.675vw;
 				}

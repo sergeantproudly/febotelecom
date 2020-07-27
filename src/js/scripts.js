@@ -72,10 +72,12 @@
         return this.each(initTabs);
     };
 
-	$(function () {
+    function initPage() {
+
 		initElements();
 
 		// LINKS
+		/*
 		$('a[href]').click(function(e) {
 			if (window.pagePreloader) {
 				var href = $(this).attr('href');
@@ -99,12 +101,6 @@
 					}
 				}
 			}
-		});
-
-		// BARBA
-		/*
-		$('document').ready(function(){
-		     Barba.Pjax.start();
 		});
 		*/
 
@@ -218,12 +214,14 @@
 			scrollCallbacks.push(function(st) {
 				var offset = $(window).height() / 2;
 
-				$(menuCheckpoints).each(function(i, node) {
-				    if (st > $(node).offset().top - offset) {
-				    	$('#v-menu>ul>li').eq(i).addClass('active').siblings().removeClass('active');
-				        return false;
-				    }
-				});
+				if ($('#v-menu').length) {
+					$(menuCheckpoints).each(function(i, node) {
+					    if (st > $(node).offset().top - offset) {
+					    	$('#v-menu>ul>li').eq(i).addClass('active').siblings().removeClass('active');
+					        return false;
+					    }
+					});
+				}				
 			});
 		}
 
@@ -715,5 +713,38 @@
 		$(window).scroll();
 		$(window).resize();
 
+	
+    }
+
+	$(function () {
+		initPage();
+
+		// BARBA
+		$('document').ready(function(){
+			var barbaTransEffect = Barba.BaseTransition.extend({
+                start: function(){
+                	var _this = this;
+                  	this.newContainerLoading.then(function() {
+                  		_this.fadeInNewcontent($(_this.newContainer));
+                  	});
+                },
+                fadeInNewcontent: function(nc) {
+	                nc.hide();
+	                var _this = this;
+	                $(this.oldContainer).fadeOut(__animationSpeed).promise().done(function() {
+	                    nc.css('visibility', 'visible');
+	                    $('html,body').scrollTop(0);
+	                    nc.fadeIn(__animationSpeed, function() {
+	                    	_this.done();
+	                    	initPage();
+	                    });
+	                });
+                }
+            });
+            Barba.Pjax.getTransition = function() {
+            	return barbaTransEffect;
+            }
+		    Barba.Pjax.start();
+		});
 	})
 })(jQuery)
