@@ -70,9 +70,11 @@ function Preloader(fullPreload) {
 		}
 	});
 
+	/*
 	$(window).on('unload', function() {
 		self.$preloader.addClass('release');
 	});
+	*/
 }
 if (!window.localStorage.getItem('preloaderIsShown')) {
 	window.localStorage.setItem('preloaderIsShown', true);

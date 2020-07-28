@@ -4954,9 +4954,9 @@ footer {
 				display: block;
 				position: absolute;
 				top: -0.059594755661501787842669845053635vw;
-				right: -0.059594755661501787842669845053635vw;
-				width: 1.9070321811680572109654350417163vw;
-				height: 1.9070321811680572109654350417163vw;
+				right: 0.059594755661501787842669845053635vw;
+				width: 2.0858164481525625744934445768772vw;
+				height: 2.0858164481525625744934445768772vw;
 				background: url('../images/table-edge.svg') no-repeat;
 				background-size: contain;
 
@@ -8017,6 +8017,15 @@ footer {
 
 		@media (max-width: $adaptive-width-mobile) {
 			height: 10vh;
+		}
+	}
+}
+
+.more {
+	&:hover {
+		&:after {
+			-webkit-animation: moveArrowRight $animation-speed*1.6 ease;
+  			animation: moveArrowRight $animation-speed*1.6 ease;
 		}
 	}
 }

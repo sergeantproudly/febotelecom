@@ -223,32 +223,7 @@
 					});
 				}				
 			});
-		}
-
-		// ANIMATE NUMBERS
-		$(window).on('opening', function() {
-			$('.js-num-animated').each(function() {
-		      	var num = parseInt($(this).text().replace(/[^\d]/g, ''));
-		      	var delay = $(this).attr('data-delay') ? $(this).attr('data-delay') - 0 : 0;
-
-		      	$(this).html($(this).text().replace(num, '<span>' + num + '</span>'));
-
-		      	$(this).children('span').animateNumber({
-		        	number: num
-		      	},
-		      	{
-		        	easing: 'swing',
-		        	duration: __animationSpeed*2 + delay
-		      	});
-		    });
-		});
-
-		// WOW ANIMATION
-		$(window).on('opening', function() {
-			if (typeof(WOW) != 'undefined') {
-				new WOW().init();
-			}
-		});
+		}		
 
 		// ANCHOR LINKS
 		$('a.js-anchor').click(function(e) {
@@ -654,35 +629,7 @@
 		$('#bl-enquiry form').find('button, input:submit').click(function(e) {
 			e.preventDefault();
 			$(this).closest('form').find('[required]').addClass('attempted');
-		});
-
-		// MAP
-	    if ($('#map').length) {
-	    	$(window).on('opening', function() {
-	    		var coords = $('#map').attr('data-coords').split(',');
-	    		coords[0] = parseFloat(coords[0]);
-	    		coords[1] = parseFloat(coords[1]);
-
-	    		var placeholderSrc = 'https://febotele.com/assets/images/ico_map_placeholder.png';
-		      	var placeholderCoords = coords;
-		      	ymaps.ready(function () {
-		        	var map = new ymaps.Map('map', {
-			          center: placeholderCoords,
-			          zoom: 16,
-			          controls: []
-			        });
-			        map.behaviors.disable('scrollZoom');
-			        var mark = new ymaps.Placemark(placeholderCoords, {}, {
-				        iconLayout: 'default#image',
-				        iconImageHref: placeholderSrc,
-			            iconImageSize: !__isMobile ? [61, 82] : (!__isMobileSmall ? [37.55, 50.47] : [31.93, 42.92]),
-			            iconImageOffset: !__isMobile ? [-30, -82] : (!__isMobileSmall ? [-18.775, -50.47] : [-15.965, -42.92])
-			        });
-
-		        	map.geoObjects.add(mark);
-		      	});
-	    	});    	
-	    }
+		});		   	
 
 	    // SOCIALS
 		$('#social-shares ul>li>a').click(function(e) {
@@ -719,10 +666,64 @@
 	$(function () {
 		initPage();
 
+		// ANIMATE NUMBERS
+		$(window).on('opening', function() {
+			$('.js-num-animated').each(function() {
+		      	var num = parseInt($(this).text().replace(/[^\d]/g, ''));
+		      	var delay = $(this).attr('data-delay') ? $(this).attr('data-delay') - 0 : 0;
+
+		      	$(this).html($(this).text().replace(num, '<span>' + num + '</span>'));
+
+		      	$(this).children('span').animateNumber({
+		        	number: num
+		      	},
+		      	{
+		        	easing: 'swing',
+		        	duration: __animationSpeed*2 + delay
+		      	});
+		    });
+		});
+
+		// WOW ANIMATION
+		$(window).on('opening', function() {
+			if (typeof(WOW) != 'undefined' && !$('body').data('wow-inited')) {
+				new WOW().init();
+				$('body').data('wow-inited', true);
+			}
+		});
+
+		// MAP
+		$(window).on('opening', function() {
+	    	if ($('#map').length) {	    	
+	    		var coords = $('#map').attr('data-coords').split(',');
+	    		coords[0] = parseFloat(coords[0]);
+	    		coords[1] = parseFloat(coords[1]);
+
+	    		var placeholderSrc = 'https://febotele.com/assets/images/ico_map_placeholder.png';
+		      	var placeholderCoords = coords;
+		      	ymaps.ready(function () {
+		        	var map = new ymaps.Map('map', {
+			          center: placeholderCoords,
+			          zoom: 16,
+			          controls: []
+			        });
+			        map.behaviors.disable('scrollZoom');
+			        var mark = new ymaps.Placemark(placeholderCoords, {}, {
+				        iconLayout: 'default#image',
+				        iconImageHref: placeholderSrc,
+			            iconImageSize: !__isMobile ? [61, 82] : (!__isMobileSmall ? [37.55, 50.47] : [31.93, 42.92]),
+			            iconImageOffset: !__isMobile ? [-30, -82] : (!__isMobileSmall ? [-18.775, -50.47] : [-15.965, -42.92])
+			        });
+
+		        	map.geoObjects.add(mark);
+		      	});
+	    	}
+	    });
+
 		// BARBA
-		$('document').ready(function(){
+		$('document').ready(function() {
 			var barbaTransEffect = Barba.BaseTransition.extend({
-                start: function(){
+                start: function() {
                 	var _this = this;
                   	this.newContainerLoading.then(function() {
                   		_this.fadeInNewcontent($(_this.newContainer));
@@ -730,12 +731,14 @@
                 },
                 fadeInNewcontent: function(nc) {
 	                nc.hide();
+	                $(window).trigger('closing');
 	                var _this = this;
 	                $(this.oldContainer).fadeOut(__animationSpeed).promise().done(function() {
 	                    nc.css('visibility', 'visible');
 	                    $('html,body').scrollTop(0);
 	                    nc.fadeIn(__animationSpeed, function() {
-	                    	_this.done();
+	                    	$(window).trigger('opening');
+	                    	_this.done();	                    	
 	                    	initPage();
 	                    });
 	                });
