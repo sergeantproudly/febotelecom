@@ -73,16 +73,32 @@ body {
 				button {
 					border-color: $background-color-darkblue;
 
+					@media (max-width: $adaptive-width-tablet) {
+						border-color: #fff;
+					}
+
 					&#btn-contact {
 						background-image: url('../images/ico_email_inversed.svg');
+
+						@media (max-width: $adaptive-width-tablet) {
+							background-image: url('../images/ico_email.svg');
+						}
 					}
 
 					&#btn-profile {
 						background-image: url('../images/ico_profile_inversed.svg');
+
+						@media (max-width: $adaptive-width-tablet) {
+							background-image: url('../images/ico_profile.svg');
+						}
 					}
 
 					&#btn-burger {
 						background-image: url('../images/ico_burger_inversed.svg');
+
+						@media (max-width: $adaptive-width-tablet) {
+							background-image: url('../images/ico_burger.svg');
+						}
 					}
 				}
 			}
@@ -321,8 +337,11 @@ header {
 			@include radius(100px);
 			cursor: pointer;
 			opacity: 0.65;
-			@include transition();
 			@extend %highlight-cancel;
+			-webkit-transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
+		   	-moz-transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
+		   	-o-transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
+		    transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
 
 			@media (max-width: $adaptive-width-tablet) {
 				width: 6.25vw;
@@ -338,7 +357,10 @@ header {
 
 			&:hover {
 				opacity: 1;
-				@include transition(opacity);
+				-webkit-transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
+			   	-moz-transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
+			   	-o-transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
+			    transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
 			}
 
 			&:first-child {
@@ -453,11 +475,13 @@ header {
 			@include transition();
 
 			@media (max-width: $adaptive-width-tablet) {
-				top: 3.4270833333333333333333333333333vw;
+				top: 50%;
+				margin-top: -3.125vw;
 			}
 
 			@media (max-width: $adaptive-width-mobile) {
-				top: 5vw;
+				top: 50%;
+				margin-top: -7.5vw;
 			}
 
 			& > img,
@@ -494,7 +518,10 @@ header {
 
 			button {
 				margin-left: 0.59594755661501787842669845053635vw;
-				@include transition();
+				-webkit-transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
+			   	-moz-transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
+			   	-o-transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
+			    transition: width $animation-speed ease, height $animation-speed ease, margin-left $animation-speed ease, opacity $animation-speed ease;
 
 				@media (max-width: $adaptive-width-tablet) {
 					margin-left: 1.3vw;
@@ -523,6 +550,7 @@ header {
 
 		& > div {
 			position: relative;
+			height: 100%;
 		}
 
 		#logo {
