@@ -8605,3 +8605,163 @@ footer {
 		}
 	}
 }
+
+#page404 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: -9.9523241954707985697258641239571vw;
+	height: 100vh;
+	padding: 0 8.75vw;
+	background: linear-gradient(180deg, #032969 2.5%, #073A93 100%);
+
+	h1,
+	.h1 {
+		@include font-size(136);
+		margin: -2vw 0 0.3vw;
+
+		@media (max-width: $adaptive-width-tablet) {
+			@include font-size(150);
+		}
+
+		@media (max-width: $adaptive-width-mobile) {
+			@include font-size(86);
+			margin-bottom: 6.125vw;
+		}
+
+		& > span {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 0;
+			color: transparent;
+			width: 4.5292014302741358760429082240763vw;
+			height: 6.7342073897497020262216924910608vw;
+			background: url('../images/ellipse.svg') no-repeat;
+			background-size: contain;
+			-webkit-transform: rotate(31deg);
+			transform: rotate(31deg);
+			margin: -1.5vw 0.8vw 0 1vw;
+
+			@media (max-width: $adaptive-width-tablet) {
+				width: 9.8958333333333333333333333333333vw;
+				height: 14.713541666666666666666666666667vw;
+				margin: -3vw 1.5vw 0 1.9vw;
+			}
+
+			@media (max-width: $adaptive-width-mobile) {
+				width: 15.833333333333333333333333333333vw;
+				height: 23.541666666666666666666666666667vw;
+				margin: -5.5vw 2.6vw 0 3.8vw;
+			}
+		}
+	}
+
+	h2,
+	.h2 {
+		@include font-size(32);
+		text-align: center;
+		margin-bottom: 1.7878426698450536352800953516091vw;
+
+		@media (max-width: $adaptive-width-tablet) {
+			@include font-size(36);
+			margin-bottom: 3.90625vw;
+		}
+
+		@media (max-width: $adaptive-width-mobile) {
+			@include font-size(24);
+			line-height: 1.28;
+			margin-bottom: 7.296875vw;
+		}
+	}
+
+	p {
+		text-align: center;
+		margin-bottom: 0;
+
+		@media (max-width: $adaptive-width-tablet) {
+			@include font-size(20.5);
+		}
+
+		@media (max-width: $adaptive-width-mobile) {
+			@include font-size(14);
+			line-height: 1.375;
+		}
+	}
+}
+
+@keyframes flipY30 {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 0deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+.flipY30 {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipY30;
+  animation-name: flipY30;
+}
+
+@keyframes flipY360 {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -180deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -180deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+.flipY360 {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipY360;
+  animation-name: flipY360;
+}
