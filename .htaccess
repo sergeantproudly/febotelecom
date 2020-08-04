@@ -3,4 +3,4 @@ Allow from All
 AddDefaultCharset UTF-8
 RewriteEngine Off
 
-ErrorDocument 404 https://febotele.com/404.html.
+ErrorDocument 404 https://febotele.com/404.html
