@@ -9026,6 +9026,8 @@ footer {
 	.h1 {
 		@include font-size(136);
 		margin: -2vw 0 0.3vw;
+		position: relative;
+		z-index: 1;
 
 		@media (max-width: $adaptive-width-tablet) {
 			@include font-size(150);
@@ -9067,6 +9069,8 @@ footer {
 	.h2 {
 		@include font-size(32);
 		text-align: center;
+		position: relative;
+		z-index: 1;
 		margin-bottom: 1.7878426698450536352800953516091vw;
 
 		@media (max-width: $adaptive-width-tablet) {
@@ -9084,6 +9088,8 @@ footer {
 	p {
 		text-align: center;
 		margin-bottom: 0;
+		position: relative;
+		z-index: 1;
 
 		@media (max-width: $adaptive-width-tablet) {
 			@include font-size(20.5);
