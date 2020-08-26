@@ -126,6 +126,32 @@ $padding-edges-wide: 2.3%;
     transition: $style $speed $easing;
     @if $delay != 0 { transition-delay: $delay; }
 }
+@mixin transitions($styles...) {
+	-webkit-transition-property: $styles;
+    -moz-transition-property: $styles;
+    -o-transition-property: $styles;
+    transition-property: $styles;
+	-webkit-transition-duration: $animation-speed;
+    -o-transition-duration: $animation-speed;
+    -moz-transition-duration: $animation-speed;
+    transition-duration: $animation-speed;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+@mixin transition-timing($timing) {
+	-webkit-transition-timing-function: $timing;
+    -o-transition-timing-function: $timing;
+    -moz-transition-timing-function: $timing;
+    transition-timing-function: $timing;
+}
+@mixin transition-duration($duration) {
+	-webkit-transition-duration: $duration;
+    -o-transition-duration: $duration;
+    -moz-transition-duration: $duration;
+    transition-duration: $duration;
+}
 
 @mixin font-size($sizeValue) {
 	$pxValue: $sizeValue;
@@ -600,6 +626,38 @@ a.dotted{
     -ms-transform: rotate($degrees);
     -o-transform: rotate($degrees);
     transform: rotate($degrees);
+}
+
+@mixin infinite-rotation($speed: $animation-speed) {
+	-webkit-animation-name: rotation180;
+    -webkit-animation-duration: $speed;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotation;
+    -moz-animation-duration: $speed;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -o-animation-name: rotation180;
+    -o-animation-duration: $speed;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    animation-name: rotation180;
+    animation-duration: $speed;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: 50% 50%;
+}
+@-webkit-keyframes rotation180 { to { -webkit-transform: rotate(180deg); }}
+@-moz-keyframes rotation180 { to { -moz-transform: rotate(180deg); }}
+@-ms-keyframes rotation180 { to { -ms-transform: rotate(180deg); }}
+@-o-keyframes rotation360 { to { -o-transform: rotate(180deg); }}
+@keyframes rotation180 { to { transform: rotate(180deg); }}
+
+@mixin animation-duration($speed: $animation-speed) {
+    -webkit-animation-duration: $speed;
+    -moz-animation-duration: $speed;
+    -o-animation-duration: $speed;
+    animation-duration: $speed;
 }
 
 .slick-dots {

@@ -220,7 +220,7 @@
 			</ul>
 		</nav>
 
-		<section class="content section" id="service">
+		<section class="content section parallax" id="service">
 			<div class="holder">
 				<h1 class="animated fadeInUpSmall wow">IoT Solutions</h1>
 
@@ -300,7 +300,7 @@
                 <div class="bl-request">
                     <h3>Request Pricing</h3>
                     <p>What do you need in global digital connectivity? Talk to FEBO IoT Solutions.</p>
-                    <button class="btn"><span>Contact an Expert</span></button>
+                    <button class="btn js-modal-link" data-target="#modal-request-pricing"><span>Contact an Expert</span></button>
                 </div>
             </div>
         </div>
@@ -345,25 +345,25 @@
 			<div class="holder">
 				<h2 class="animated fadeInUpSmall wow">Contact Us</h2>
 
-				<form action="#" method="post">
+				<form action="#" method="post" data-done-timeout="5">
                     <div class="line animated fadeInUpSmall wow">
                         <div class="input-holder">
-                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
-                        	<i>Name</i>
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
-                        	<i>E-mail</i>
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="text" name="text" placeholder="Company" maxlength="255">
-                        	<i>Company</i>
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
                         </div>                        
                     </div>
                     <div class="line scd animated fadeInUpSmall wow">
                         <div class="input-holder">
-                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
-                        	<i>A few words about your request</i>
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
                         </div>
                     </div>
 
@@ -432,25 +432,25 @@
 			<div class="contents">
 				<div class="h1">Contact Us</div>			
 
-				<form action="#" method="post" data-done-timeout="15">
+				<form action="#" method="post" data-done-timeout="5">
                     <div class="line">
                         <div class="input-holder">
-                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
-                        	<i>Name</i>
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
-                        	<i>E-mail</i>
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="text" name="text" placeholder="Company" maxlength="255">
-                        	<i>Company</i>
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
                         </div>                        
                     </div>
                     <div class="line scd">
                         <div class="input-holder">
-                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
-                        	<i>A few words about your request</i>
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
                         </div>
                     </div>
 
@@ -467,6 +467,41 @@
 			</div>
 		</div>
 	</div>
+    <div class="modal-wrapper" id="modal-request-pricing">
+        <div class="modal">
+            <div class="contents">
+                <div class="h1">Request Pricing</div>            
+
+                <form action="#" method="post" data-done-timeout="5">
+                    <div class="line">
+                        <div class="input-holder">
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="service" data-hubspot-name="service" value="IoT">
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-request-pricing-agreement" checked="checked"><label for="modal-request-pricing-agreement">I agree to the <a href="privacy-policy.html">privacy policy</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script type="text/javascript" src="assets/js/scripts.js?20"></script>

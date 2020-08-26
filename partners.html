@@ -220,7 +220,7 @@
 			</ul>
 		</nav>
 
-		<section class="content section" id="partners">
+		<section class="content section parallax" id="partners">
 			<div class="holder">
 				<h1 class="animated fadeInUpSmall wow">Partners</h1>
 
@@ -277,14 +277,14 @@
                         <li>
                             <div class="illustration animated fadeInUpSmall wow"><img src="assets/images/telecom_carriers.svg" alt="Telecom Carriers" title="Telecom Carriers"></div>
                             <h3 class="animated fadeInUpSmall wow delay-03s">Telecom Carriers</h3>
-                            <p class="animated fadeInUpSmall wow delay-06s">We are open for new interconnections to provide carriers with access to our network, and recognize opportunities in partner technologies</p>
-                            <button class="btn animated fadeInUpSmall wow delay-09s"><span>Send Request</span></button>
+                            <p class="animated fadeInUpSmall wow delay-03s">We are open for new interconnections to provide carriers with access to our network, and recognize opportunities in partner technologies</p>
+                            <button class="btn js-modal-link animated fadeInUpSmall wow delay-03s" data-target="#modal-become-partner1"><span>Send Request</span></button>
                         </li>
                         <li>
                             <div class="illustration animated fadeInUpSmall wow delay-03s"><img src="assets/images/service_providers.svg" alt="Service Providers" title="Service Providers"></div>
                             <h3 class="animated fadeInUpSmall wow delay-06s">Service Providers</h3>
-                            <p class="animated fadeInUpSmall wow delay-09s">We provide service providers with reliable and robust solutions</p>
-                            <button class="btn animated fadeInUpSmall wow delay-12s"><span>Send Request</span></button>
+                            <p class="animated fadeInUpSmall wow delay-06s">We provide service providers with reliable and robust solutions</p>
+                            <button class="btn js-modal-link animated fadeInUpSmall wow delay-06s" data-target="#modal-become-partner2"><span>Send Request</span></button>
                         </li>
                     </ul>
                 </div>
@@ -302,25 +302,25 @@
 			<div class="holder">
 				<h2 class="animated fadeInUpSmall wow">Contact Us</h2>
 
-				<form action="#" method="post">
+				<form action="#" method="post" data-done-timeout="5">
                     <div class="line animated fadeInUpSmall wow">
                         <div class="input-holder">
-                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
-                        	<i>Name</i>
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
-                        	<i>E-mail</i>
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="text" name="text" placeholder="Company" maxlength="255">
-                        	<i>Company</i>
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
                         </div>                        
                     </div>
                     <div class="line scd animated fadeInUpSmall wow">
                         <div class="input-holder">
-                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
-                        	<i>A few words about your request</i>
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
                         </div>
                     </div>
 
@@ -390,25 +390,25 @@
 			<div class="contents">
 				<div class="h1">Contact Us</div>			
 
-				<form action="#" method="post" data-done-timeout="15">
+				<form action="#" method="post" data-done-timeout="5">
                     <div class="line">
                         <div class="input-holder">
-                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
-                        	<i>Name</i>
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
-                        	<i>E-mail</i>
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="text" name="text" placeholder="Company" maxlength="255">
-                        	<i>Company</i>
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
                         </div>                        
                     </div>
                     <div class="line scd">
                         <div class="input-holder">
-                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
-                        	<i>A few words about your request</i>
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
                         </div>
                     </div>
 
@@ -425,6 +425,77 @@
 			</div>
 		</div>
 	</div>
+    <div class="modal-wrapper" id="modal-become-partner1">
+        <div class="modal">
+            <div class="contents">
+                <div class="h1">Become a Partner</div>            
+
+                <form action="#" method="post" data-done-timeout="5">
+                    <div class="line">
+                        <div class="input-holder">
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="type" data-hubspot-name="type" value="Telecom Carriers">
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-become-partner1-agreement" checked="checked"><label for="modal-become-partner1-agreement">I agree to the <a href="privacy-policy.html">privacy policy</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-wrapper" id="modal-become-partner2">
+        <div class="modal">
+            <div class="contents">
+                <div class="h1">Become a Partner</div>            
+
+                <form action="#" method="post" data-done-timeout="5">
+                    <div class="line">
+                        <div class="input-holder">
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="type" data-hubspot-name="type" value="Service Providers">
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-become-partner2-agreement" checked="checked"><label for="modal-become-partner2-agreement">I agree to the <a href="privacy-policy.html">privacy policy</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script type="text/javascript" src="assets/js/scripts.js?20"></script>

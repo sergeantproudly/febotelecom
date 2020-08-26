@@ -721,25 +721,25 @@
 			<div class="contents">
 				<div class="h1">Contact Us</div>			
 
-				<form action="#" method="post" data-done-timeout="15">
+				<form action="#" method="post" data-done-timeout="5">
                     <div class="line">
                         <div class="input-holder">
-                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
-                        	<i>Name</i>
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
-                        	<i>E-mail</i>
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="text" name="text" placeholder="Company" maxlength="255">
-                        	<i>Company</i>
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
                         </div>                        
                     </div>
                     <div class="line scd">
                         <div class="input-holder">
-                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
-                        	<i>A few words about your request</i>
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
                         </div>
                     </div>
 

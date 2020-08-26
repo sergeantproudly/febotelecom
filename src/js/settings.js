@@ -14,7 +14,4 @@ var __isMobileSmall = ($(window).width() <= __widthMobileSmall);
 
 var __animationSpeed = 350;
 
-var __modalFadeoutCoef = 2.5;
-
-var hubspotPortalId = '8125152';
-var hubspotFormGuid = 'bf916484-24f7-47f4-8153-84d6bd3a3985';
+var __modalFadeoutSizeCoef = 2.5;

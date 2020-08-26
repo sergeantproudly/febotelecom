@@ -230,7 +230,7 @@
 			</ul>
 		</nav>
 
-		<section class="content section" id="contacts">
+		<section class="content section parallax" id="contacts">
 			<div class="holder">
 				<h1 class="animated fadeInUpSmall wow">Get in Touch</h1>
 
@@ -269,29 +269,29 @@
                 <div id="bl-enquiry">
                     <h2 class="animated fadeInUpSmall wow">Leave an&nbsp;Enquiry</h2>
 
-                    <form action="#" method="post">
+                    <form action="#" method="post" data-done-timeout="5">
                         <h3 class="animated fadeInUpSmall wow">Which services are you interested in</h3>
                         <div class="services-lines animated fadeInUpSmall wow">
-                            <input type="checkbox" name="service1" id="service1"><label for="service1">Virtual Numbers — Voice</label>
-                            <input type="checkbox" name="service2" id="service2"><label for="service2">Virtual Numbers — SMS</label>
-                            <input type="checkbox" name="service3" id="service3"><label for="service3">A2P Service</label>
-                            <input type="checkbox" name="service4" id="service4"><label for="service4">IoT Service</label>
-                            <input type="checkbox" name="service5" id="service5"><label for="service5">Mobile Data</label>
-                            <input type="checkbox" name="service6" id="service6"><label for="service6">Special enquiry</label>
+                            <input type="checkbox" name="service1" data-hubspot-name="service1" id="service1"><label for="service1">Virtual Numbers — Voice</label>
+                            <input type="checkbox" name="service2" data-hubspot-name="service2" id="service2"><label for="service2">Virtual Numbers — SMS</label>
+                            <input type="checkbox" name="service3" data-hubspot-name="service3" id="service3"><label for="service3">A2P Service</label>
+                            <input type="checkbox" name="service4" data-hubspot-name="service4" id="service4"><label for="service4">IoT Service</label>
+                            <input type="checkbox" name="service5" data-hubspot-name="service5" id="service5"><label for="service5">Mobile Data</label>
+                            <input type="checkbox" name="service6" data-hubspot-name="service6" id="service6"><label for="service6">Micro Billing Solutions</label>
                         </div>
 
                         <h3 class="animated fadeInUpSmall wow">Your contacts</h3>
                         <div class="line animated fadeInUpSmall wow">
                             <div class="input-holder">
-                                <input type="text" name="name" placeholder="Name" maxlength="255" required>
+                                <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
                                 <i>Name</i>
                             </div>
                             <div class="input-holder">
-                                <input type="email" name="email" placeholder="E-mail" maxlength="255" required>
+                                <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
                                 <i>E-mail</i>
                             </div>
                             <div class="input-holder">
-                                <input type="text" name="text" placeholder="Company" maxlength="255">
+                                <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
                                 <i>Company</i>
                             </div>                        
                         </div>
@@ -369,25 +369,25 @@
 			<div class="contents">
 				<div class="h1">Contact Us</div>			
 
-				<form action="#" method="post" data-done-timeout="15">
+				<form action="#" method="post" data-done-timeout="5">
                     <div class="line">
                         <div class="input-holder">
-                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
-                        	<i>Name</i>
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
-                        	<i>E-mail</i>
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="text" name="text" placeholder="Company" maxlength="255">
-                        	<i>Company</i>
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
                         </div>                        
                     </div>
                     <div class="line scd">
                         <div class="input-holder">
-                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
-                        	<i>A few words about your request</i>
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
                         </div>
                     </div>
 

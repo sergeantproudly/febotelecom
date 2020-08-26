@@ -220,7 +220,7 @@
 			</ul>
 		</nav>
 
-		<section class="content section" id="service">
+		<section class="content section parallax" id="service">
 			<div class="holder">
 				<h1 class="animated fadeInUpSmall wow">A2P SMS Service</h1>
 
@@ -301,11 +301,11 @@
                     </div>
 
                     <div class="tabs-block">
-                        <div class="tabs">
+                        <div class="tabs" data-on-mobile="select">
                             <ul>
                                 <li><a href="#game-industry">Game Industry</a></li>
                                 <li><a href="#e-commerce">E-Commerce</a></li>
-                                <li><a href="#small-buisness">Small Buisness</a></li>
+                                <li><a href="#small-business">Small Business</a></li>
                                 <li><a href="#online-services">Online Services</a></li>
                                 <li><a href="#logistics">Logistics</a></li>
                                 <li><a href="#banks-insuruance">Banks &amp; Insuruance</a></li>
@@ -319,7 +319,7 @@
                                     <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
                                 </div>
 
-                                <button class="btn"><span>Contact an Expert</span></button>
+                                <button class="btn js-modal-link" data-target="#modal-request-pricing"><span>Contact an Expert</span></button>
                             </div>
                             <div id="e-commerce">
                                 <h3>E-Commerce</h3>
@@ -328,16 +328,16 @@
                                     <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
                                 </div>
 
-                                <button class="btn"><span>Contact an Expert</span></button>
+                                <button class="btn js-modal-link" data-target="#modal-request-pricing"><span>Contact an Expert</span></button>
                             </div>
-                            <div id="small-buisness">
-                                <h3>Small Buisness</h3>
+                            <div id="small-business">
+                                <h3>Small Business</h3>
                                 
                                 <div class="text">
                                     <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
                                 </div>
 
-                                <button class="btn"><span>Contact an Expert</span></button>
+                                <button class="btn js-modal-link" data-target="#modal-request-pricing"><span>Contact an Expert</span></button>
                             </div>
                             <div id="online-services">
                                 <h3>Online Services</h3>
@@ -346,7 +346,7 @@
                                     <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
                                 </div>
 
-                                <button class="btn"><span>Contact an Expert</span></button>
+                                <button class="btn js-modal-link" data-target="#modal-request-pricing"><span>Contact an Expert</span></button>
                             </div>
                             <div id="logistics">
                                 <h3>Logistics</h3>
@@ -364,7 +364,7 @@
                                     <p>IT & online services use bulk SMS as a two-factor authentication tool to provide a secure digital experience for users. Notifications include information about available account balance, new added functionality, changes in pricing, etc.</p>
                                 </div>
 
-                                <button class="btn"><span>Contact an Expert</span></button>
+                                <button class="btn js-modal-link" data-target="#modal-request-pricing"><span>Contact an Expert</span></button>
                             </div>
                         </div>
                     </div>
@@ -398,7 +398,7 @@
                 <div class="bl-request">
                     <h3>Request Pricing</h3>
                     <p>Get the A2P SMS capabilities you need for text campaigns, at scale.</p>
-                    <button class="btn"><span>Contact an Expert</span></button>
+                    <button class="btn js-modal-link" data-target="#modal-request-pricing"><span>Contact an Expert</span></button>
                 </div>
             </div>
         </div>
@@ -443,25 +443,25 @@
 			<div class="holder">
 				<h2 class="animated fadeInUpSmall wow">Contact Us</h2>
 
-				<form action="#" method="post">
+				<form action="#" method="post" data-done-timeout="5">
                     <div class="line animated fadeInUpSmall wow">
                         <div class="input-holder">
-                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
-                        	<i>Name</i>
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
-                        	<i>E-mail</i>
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="text" name="text" placeholder="Company" maxlength="255">
-                        	<i>Company</i>
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
                         </div>                        
                     </div>
                     <div class="line scd animated fadeInUpSmall wow">
                         <div class="input-holder">
-                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
-                        	<i>A few words about your request</i>
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
                         </div>
                     </div>
 
@@ -531,25 +531,25 @@
 			<div class="contents">
 				<div class="h1">Contact Us</div>			
 
-				<form action="#" method="post" data-done-timeout="15">
+				<form action="#" method="post" data-done-timeout="5">
                     <div class="line">
                         <div class="input-holder">
-                        	<input type="text" name="name" placeholder="Name" maxlength="255" required>
-                        	<i>Name</i>
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="email" name="email" placeholder="E-mail" maxlength="255" required>
-                        	<i>E-mail</i>
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
                         </div>
                         <div class="input-holder">
-                        	<input type="text" name="text" placeholder="Company" maxlength="255">
-                        	<i>Company</i>
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
                         </div>                        
                     </div>
                     <div class="line scd">
                         <div class="input-holder">
-                        	<textarea name="text" placeholder="A few words about your request" class="js-autoheight"></textarea>
-                        	<i>A few words about your request</i>
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
                         </div>
                     </div>
 
@@ -566,6 +566,41 @@
 			</div>
 		</div>
 	</div>
+    <div class="modal-wrapper" id="modal-request-pricing">
+        <div class="modal">
+            <div class="contents">
+                <div class="h1">Request Pricing</div>            
+
+                <form action="#" method="post" data-done-timeout="5">
+                    <div class="line">
+                        <div class="input-holder">
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="service" data-hubspot-name="service" value="A2P SMS">
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-request-pricing-agreement" checked="checked"><label for="modal-request-pricing-agreement">I agree to the <a href="privacy-policy.html">privacy policy</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script type="text/javascript" src="assets/js/scripts.js?20"></script>

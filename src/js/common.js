@@ -5,7 +5,7 @@ function initElements(element) {
 		onResize();
 	});
 
-	$(window).on('scroll', function() {
+	$(window).on('scroll', function(e) {
 		onScroll();
 	});
 
@@ -146,23 +146,21 @@ function initElements(element) {
 			}			
 		}
 
-	}).keypress(function(e){
-		if (!e)e = window.event;
-		var key = e.keyCode||e.which;		
+	}).keyup(function(e) {
+		if (!e) e = window.event;
+		var key = e.keyCode || e.which;
 
 		if ($('#modal-fadeout').css('display') == 'block') {
 			if (key == 27) {
 				$('#modal-close').click();
-			} 
+			}
 		}
 	});
 
-	$element.find('.input-holder input, .input-holder textarea').keydown(function() {
+	$element.find('.input-holder input, .input-holder textarea').on('input', function() {
 		if ($(this).val()) {
 			$(this).parent('.input-holder').addClass('focused');
-		}
-	}).keyup(function() {
-		if (!$(this).val()) {
+		} else {
 			$(this).parent('.input-holder').removeClass('focused');
 		}
 	}).focusout(function() {
@@ -240,51 +238,103 @@ function parseUrl(url) {
 	return parser;
 } 
 
+function changeScale(element, newScale) {
+	if (element.style.transform.length == 0) element.style.transform = 'scale(' + newScale + ')';
+    else element.style.transform = element.style.transform.replace(/scale\([0-9|\.]*\)/, 'scale(' + newScale + ')');
+}
+
 function getVMax() {
 	return Math.max($(window).width(), $(window).height());
 }
 
-function openModalFadeout(covered) {
-	if (covered) $('#modal-fadeout').data('covered', 1);
-	else $('#modal-fadeout').removeData('covered');
-	syncModalFadeout();
+// x - right position
+// y - top position
+// w - width
+// h - height
+// s - scale 1 or 0
+function posModalFadeout(x, y, w, h, s) {
+	var $fadeout = $('#modal-fadeout');
+	if (x == 'init' || y == 'init' || w == 'init' || h == 'init') {
+		var covered = $fadeout.data('covered');
+		var mf_size = covered ? getVMax() * __modalFadeoutSizeCoef : $(window).height() * __modalFadeoutSizeCoef;
 
-	var mf_size = covered ? getVMax() * __modalFadeoutCoef : $(window).height() * __modalFadeoutCoef;
-	$('#modal-fadeout')
-		.data('opened', 1)
-		.get(0).style.transform = 'translate3d(' + (mf_size/2) + 'px, ' + (-mf_size/2) + 'px, 0) scale(1)';
+		if (x == 'init') x = -mf_size / 2;
+		if (y == 'init') y = -mf_size / 2;
+		if (w == 'init') w = mf_size;
+		if (h == 'init') h = mf_size;
+	}
+
+	if (x && y) {
+		$fadeout.css({
+			'right': x,
+			'top': y
+		});
+	}
+	if (w && typeof(w) == 'number') {
+		$fadeout.width(w);
+	}
+	if (h && typeof(h) == 'number') {
+		$fadeout.height(h);
+	}
+	scaleModalFadeout(s);	
+}
+function scaleModalFadeout(scale) {
+	changeScale($('#modal-fadeout').get(0), scale);
 }
 
 function syncModalFadeout() {
-	var opened = $('#modal-fadeout').data('opened');
-	var covered = $('#modal-fadeout').data('covered');
-	var mf_size = covered ? getVMax() * __modalFadeoutCoef : $(window).height() * __modalFadeoutCoef;
+	var $fadeout = $('#modal-fadeout');
+	var opened = $fadeout.data('opened');
+	var covered = $fadeout.data('covered');
+	var context = $fadeout.data('context');
+	var mf_size = covered ? getVMax() * __modalFadeoutSizeCoef : $(window).height() * __modalFadeoutSizeCoef;
 
-	$('#modal-fadeout')
-		.width(mf_size)
-		.height(mf_size)
-		.get(0).style.transform = 'translate3d(' + (mf_size/2) + 'px, ' + (-mf_size/2) + 'px, 0) scale(' + (opened ? 1 : 0) + ')';
+	if (context) {
+		var contextOffset = context.getBoundingClientRect();
+
+		posModalFadeout(
+			($(window).width() - contextOffset.left - $(context).outerWidth() / 2) - mf_size / 2,
+			contextOffset.top + $(context).outerHeight() / 2 - mf_size / 2, 
+			'init', 
+			'init', 
+			opened ? 1 : 0);
+
+	} else {
+		posModalFadeout('init', 'init', 'init', 'init', opened ? 1 : 0);
+	}	
+}
+
+function openModalFadeout(covered, context) {
+	var $fadeout = $('#modal-fadeout');
+	if (covered) $fadeout.data('covered', 1);
+	else $fadeout.removeData('covered');
+	if (context) $fadeout.data('context', context);
+	else $fadeout.removeData('context');
+	syncModalFadeout();
+
+	$fadeout.data('opened', 1);
+	scaleModalFadeout(1);
 }
 
 function closeModalFadeout() {
-	var covered = $('#modal-fadeout').data('covered');
-	var mf_size = covered ? getVMax() * __modalFadeoutCoef : $(window).height() * __modalFadeoutCoef;
+	var $fadeout = $('#modal-fadeout');
+	var covered = $fadeout.data('covered');
+	var mf_size = covered ? getVMax() * __modalFadeoutSizeCoef : $(window).height() * __modalFadeoutSizeCoef;
 
-	$('#modal-fadeout')
-		.data('opened', 0)
-		.get(0).style.transform = 'translate3d(' + (mf_size/2) + 'px, ' + (-mf_size/2) + 'px, 0) scale(0)';	
+	$fadeout.data('opened', 0);
+	scaleModalFadeout(0);
 }
 
-function showModal(modal_id, dontHideOthers) {
+function showModal(modal_id, context) {
 	var $modal = $('#' + modal_id);
 
-	if (typeof(dontHideOthers) == 'undefined' || !dontHideOthers) $('.modal-wrapper:visible').not($modal).attr('data-transparent', true).stop().animate({'opacity': 0}, __animationSpeed, function() {
-			$(this).hide().css('opacity', 1);
-		});
+	$('.modal-wrapper:visible').not($modal).attr('data-transparent', true).stop().animate({'opacity': 0}, __animationSpeed, function() {
+		$(this).hide().css('opacity', 1);
+	});
 
 	var display = __isMobileTablet ? 'block' : 'table';
 
-	openModalFadeout(true);
+	openModalFadeout(true, context);
 	$('#modal-close').stop().fadeTo(__animationSpeed, 0.65);
 
 	$modal.stop().fadeIn(450).css({
@@ -339,21 +389,6 @@ function closeModal(sender) {
 	}
 }
 */
-
-function showModalConfirm(header, btn, action) {
-	if (typeof(header) != 'undefined' && header) $('#modal-confirm>.modal>.contents>h1').text(header);
-	if (typeof(btn) != 'undefined' && btn) $('#modal-confirm-action-btn').text(btn);
-	if (typeof(action) == 'function') {
-		$('#modal-confirm-action-btn').click(function(e) {
-			e.preventDefault();
-			e.stopPropagation();
-
-			action();
-			hideModal(this, $('.modal-wrapper:visible').length > 1);
-		});
-	}
-	showModal('modal-confirm', true);
-}
 
 function scrollInit(block) {
 	if (!$(block).data('inited')) {
@@ -554,6 +589,7 @@ function reload(forceGet) {
   window.location.reload(forceGet);
 } 
 
+/*
 jQuery.fn.rotate = function(degrees) {
     $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
                  '-moz-transform' : 'rotate('+ degrees +'deg)',
@@ -563,6 +599,7 @@ jQuery.fn.rotate = function(degrees) {
              	 'zoom' : 1});
     return $(this);
 };
+*/
 
 function inViewport(element) {
 	var st = $(this).scrollTop();
@@ -595,4 +632,13 @@ function setTranslate3d(element, x, y, z) {
 		y: y,
 		z: z
 	});
+}
+
+function randomInteger(min, max) {
+  var rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}
+
+function randomFloat(min, max) {
+  return Math.random() * (max - min) + min;
 }
