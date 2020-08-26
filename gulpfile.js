@@ -11,6 +11,9 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');   
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
+const replace = require('gulp-replace');
+
+const assetsVersion = 'v28';
 
 const jsFiles = [
 	'./src/js/jquery-3.1.1.min.js',
@@ -109,13 +112,19 @@ function clean() {
 	return del(['assets/*']);
 }
 
+function updateAssetsVersion() {
+	return gulp.src('./*.html')
+		.pipe(replace('{VERSION}', assetsVersion))
+		.pipe(gulp.dest('./'));
+}
+
 //gulp.task('styles', styles);
 //gulp.task('scripts', scripts);
 gulp.task('images', images);
 gulp.task('watch', watch);
 
 gulp.task('build', gulp.series(clean,
-						gulp.parallel(styles, scripts, images, imagesSvg, fonts)
+						gulp.parallel(styles, scripts, images, imagesSvg, fonts, updateAssetsVersion)
 					));
 
 gulp.task('dev', gulp.series('build', 'watch'));
