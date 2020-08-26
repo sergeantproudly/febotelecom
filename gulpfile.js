@@ -13,7 +13,7 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const replace = require('gulp-replace');
 
-const assetsVersion = 'v28';
+const assetsVersion = 'v29';
 
 const jsFiles = [
 	'./src/js/jquery-3.1.1.min.js',

@@ -361,12 +361,38 @@
 
 		// FIRST SCREEN VIDEO
 		if ($('#bl-first').length) {
+			if (__isMobile) {
+				if (__isMobileSmall && $(window).data('slow-connection')) {
+					var videoMainSrc = 'assets/images/waves_mobile_small.mp4';
+				} else {
+					var videoMainSrc = 'assets/images/waves_mobile.mp4';
+				}
+			} else {
+				if ($(window).data('slow-connection')) {
+					var videoMainSrc = 'assets/images/waves_light.mp4';
+				} else {
+					var videoMainSrc = 'assets/images/waves.mp4';
+				}
+			}
 			var video = [
-				'assets/images/waves.mp4'
+				{
+					'path': videoMainSrc,
+					'type': 'video/mp4'
+				},
+				{
+					'path': 'assets/images/waves.webm',
+					'type': 'video/webm'
+				},
+				{
+					'path': 'assets/images/waves.ogv',
+					'type': 'video/ogv'
+				}
 			];
 
-			var i = 0;
-			$('#video_src').attr('src', video[i]);
+			var i;
+			for (i = 0; i < video.length; i++) {
+				$('#video').append('<source src="' + video[i]['path'] + '" type="' + video[i]['type'] + '"/>');
+			}
 			$('#video').get(0).load();
 			$('#video').get(0).play();
 

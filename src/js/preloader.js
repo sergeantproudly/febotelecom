@@ -6,6 +6,9 @@ function Preloader(fullPreload) {
 	this.$loader = this.$preloader.children('.loader');
 	this.fload = false;
 	this.fanim = false;
+	this.preloadTimeLimit = 3500;
+	this.shown = false;
+	this.fullPreloadStarted = false;
 
 	this.openingSpeed = 500;
 	this.fadeoutSpeed = 150;
@@ -21,6 +24,7 @@ function Preloader(fullPreload) {
 				self.$preloader.addClass('top');
 			});
 		$(window).trigger('opening');
+		self.shown = true;
 	}
 
 	this.pageClose = function(callback) {
@@ -45,6 +49,7 @@ function Preloader(fullPreload) {
 	} else {
 		setTimeout(function() {
 			self.$preloader.addClass('animate');
+			self.fullPreloadStarted = true;
 
 			setTimeout(function() {
 				self.$preloader.addClass('released');
@@ -52,7 +57,8 @@ function Preloader(fullPreload) {
 				setTimeout(function() {
 					self.fanim = true;
 
-					if (self.fload) {
+					//if (self.fload && !self.shown) {
+						if (!self.shown) {
 						self.pageOpen();
 					}
 
@@ -65,7 +71,7 @@ function Preloader(fullPreload) {
 	$(window).on('load', function() {
 		self.fload = true;
 
-		if (self.fanim) {
+		if (self.fanim && !self.shown) {
 			self.pageOpen();
 		}
 	});
@@ -75,6 +81,13 @@ function Preloader(fullPreload) {
 		self.$preloader.addClass('release');
 	});
 	*/
+
+	setTimeout(function() {
+		if (!self.fullPreloadStarted) {
+			$(window).data('slow-connection', true);
+			$(window).trigger('load');
+		}
+	}, self.preloadTimeLimit);
 }
 if (!window.localStorage.getItem('preloaderIsShown')) {
 	window.localStorage.setItem('preloaderIsShown', true);
