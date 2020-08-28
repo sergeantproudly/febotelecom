@@ -13,7 +13,7 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const replace = require('gulp-replace');
 
-const assetsVersion = 30;
+const assetsVersion = 31;
 
 const jsFiles = [
 	'./src/js/jquery-3.1.1.min.js',
@@ -114,7 +114,7 @@ function clean() {
 
 function updateAssetsVersion() {
 	return gulp.src('./*.html')
-		.pipe(replace('v' + (assetsVersion - 1), 'v' + assetsVersion))
+		.pipe(replace('?v' + (assetsVersion - 1), '?v' + assetsVersion))
 		.pipe(gulp.dest('./'));
 }
 
