@@ -18,6 +18,8 @@ function Preloader(fullPreload) {
 	this.logoAnimationEndingDelay = 700;
 
 	this.pageOpen = function() {
+		clearTimeout(self.preloadTimeLimitTid);
+		
 		self.$preloader.addClass('release')
 			.delay(self.openingSpeed - self.fadeoutSpeed)
 			.fadeOut(self.fadeoutSpeed, function() {
@@ -82,7 +84,7 @@ function Preloader(fullPreload) {
 	});
 	*/
 
-	setTimeout(function() {
+	self.preloadTimeLimitTid = setTimeout(function() {
 		if (!self.fullPreloadStarted) {
 			$(window).data('slow-connection', true);
 			$(window).trigger('load');

@@ -219,11 +219,28 @@
                 <li><a href="partners.html">Partners</a></li>
             </ul>
         </nav>
-        
-		<div id="page404" class="parallax">
-			<h1>4<span>0</span>4</h1>
-			<h2>Oops, something went wrong</h2>
-			<p>Please go back to the previous page or go to the <a href="/">home page</a></p>
+
+		<div id="login" class="parallax">
+			<h1>Login</h1>
+			<p>Please login to proceed</p>
+
+            <form action="https://cs.febotele.com/login" method="post">
+                <div class="input-holder">
+                    <input type="text" name="login" placeholder="Login" maxlength="255" autofocus="" required>
+                    <i>Login</i>
+                </div>
+                <div class="input-holder">
+                    <input type="password" name="name" placeholder="Password" maxlength="255" required>
+                    <i>Password</i>
+                </div>
+
+                <input type="hidden" name="_token" value="ixHP3tp6if861hg7MTmyAlDGlOuJA3kzairg00zP">
+                <button class="btn"><span>Login</span></button>
+            </form>
+
+            <!--
+            <a href="#" id="forgot-password">Forgot the password?</a>
+        -->
 		</div>
 	</div>
 	</div>

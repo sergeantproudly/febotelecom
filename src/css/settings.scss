@@ -629,7 +629,7 @@ a.dotted{
 }
 
 @mixin infinite-rotation($speed: $animation-speed) {
-	-webkit-animation-name: rotation180;
+	-webkit-animation-name: rotation360;
     -webkit-animation-duration: $speed;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
@@ -637,11 +637,11 @@ a.dotted{
     -moz-animation-duration: $speed;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
-    -o-animation-name: rotation180;
+    -o-animation-name: rotation360;
     -o-animation-duration: $speed;
     -o-animation-iteration-count: infinite;
     -o-animation-timing-function: linear;
-    animation-name: rotation180;
+    animation-name: rotation360;
     animation-duration: $speed;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -652,6 +652,12 @@ a.dotted{
 @-ms-keyframes rotation180 { to { -ms-transform: rotate(180deg); }}
 @-o-keyframes rotation360 { to { -o-transform: rotate(180deg); }}
 @keyframes rotation180 { to { transform: rotate(180deg); }}
+
+@-webkit-keyframes rotation360 { to { -webkit-transform: rotate(360deg); }}
+@-moz-keyframes rotation360 { to { -moz-transform: rotate(360deg); }}
+@-ms-keyframes rotation360 { to { -ms-transform: rotate(360deg); }}
+@-o-keyframes rotation360 { to { -o-transform: rotate(360deg); }}
+@keyframes rotation360 { to { transform: rotate(360deg); }}
 
 @mixin animation-duration($speed: $animation-speed) {
     -webkit-animation-duration: $speed;

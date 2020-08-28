@@ -267,7 +267,7 @@
 
 		// PROFILE
 		$('#btn-profile').click(function() {
-			var profileLink = 'https://cs.febotele.com';
+			var profileLink = '/login.html';
 			redirect(profileLink);
 		});
 
@@ -953,7 +953,9 @@
 			}
 
 			$('.parallax').each(function(i, parallax) {
-				$(parallax).append('<div class="parallax-figure image1"></div><div class="parallax-figure image2"></div><div class="parallax-figure image3"></div>');				
+				$(parallax).append('<div class="parallax-figure image1"></div>');
+				$(parallax).append('<div class="parallax-figure image2"></div>');
+				$(parallax).append('<div class="parallax-figure image3"></div>');
 			});
 
 			resizeCallbacks.push(function() {
