@@ -206,7 +206,7 @@
 		<nav id="mn-main">
 			<ul class="animated fadeInRightSmall wow">
 				<li><a href="/">Home</a></li>
-				<li><a href="projects.html">Projects</a></li>
+				<!--<li><a href="projects.html">Projects</a></li>-->
 				<li><a href="solutions.html">Solutions</a></li>
 				<li class="active"><a href="about.html">About</a></li>
 				<li><a href="contacts.html">Contacts</a></li>
@@ -328,7 +328,7 @@
             <div class="holder">
                 <div class="wrap">
                     <a href="/" id="logo-footer" class="animated fadeInUpSmall wow"><img src="assets/images/logo_short.svg" alt="FEBO TELECOM LTD" title="FEBO TELECOM LTD"></a>
-                    <div id="copyright" class="animated fadeInUpSmall wow">&copy; 2012 - 2024 FEBO TELECOM LTD <br>All rights reserved</div>
+                    <div id="copyright" class="animated fadeInUpSmall wow">&copy; 2012 - 2025 FEBO TELECOM LTD <br>All rights reserved</div>
 
                     <div id="mn-bottom">
                         <div class="line animated fadeInUpSmall wow delay-02s">
@@ -336,7 +336,7 @@
                             <ul>
                                 <li class="active"><a href="about.html">About</a></li>
                                 <li><a href="history.html">Our history</a></li>
-                                <li><a href="news.html">Blog</a></li>
+                                <!--<li><a href="news.html">Blog</a></li>-->
                                 <li><a href="events.html">Events</a></li>
                                 <li><a href="careers.html">Careers</a></li>
                                 <li><a href="contacts.html">Contacts & Locations</a></li>
@@ -347,20 +347,18 @@
                             <ul>
                                 <li><a href="virtual-numbers-voice.html">Virtual Numbers: voice</a></li>
                                 <li><a href="virtual-numbers-sms.html">Virtual Numbers: SMS</a></li>
-                                <li><a href="mobile-data.html">Mobile Data</a></li>
+                                <!--<li><a href="mobile-data.html">Mobile Data</a></li>-->
                                 <li><a href="iot.html">IoT</a></li>
                                 <li><a href="a2p-sms.html">A2P SMS</a></li>
                                 <li><a href="microbilling.html">Micro Billing Solutions</a></li>
                             </ul>
                         </div>
-                        <div class="line animated fadeInUpSmall wow delay-06s">
-                            <div class="h3"><a href="projects.html">Projects</a></div>
-                            <ul>
-                                <!-- removed -->
-                                <li><a href="https://febo.mobi/" target="_blank">FEBO</a></li>
-                                <!-- removed -->
-                            </ul>
-                        </div>
+                        <!-- <div class="line animated fadeInUpSmall wow delay-06s">
+							<div class="h3"><a href="projects.html">Projects</a></div>
+							<ul>
+								<li><a href="https://febo.mobi/" target="_blank">FEBO</a></li>
+							</ul>
+						</div> -->
                     </div>
 
                     <div id="mn-terms" class="animated fadeInUpSmall wow">
@@ -413,6 +411,78 @@
 			</div>
 		</div>
 	</div>
+    <div class="modal-wrapper" id="modal-request-pricing">
+        <div class="modal">
+            <div class="contents">
+                <div class="h1">Request Pricing</div>            
+
+                <form action="#" method="post" data-done-timeout="5">
+                    <div class="line">
+                        <div class="input-holder">
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="service" data-hubspot-name="service" value="Virtual Numbers — Voice">
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-request-pricing-agreement" checked="checked"><label for="modal-request-pricing-agreement">I agree to the <a href="privacy-policy.html">privacy policy</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-wrapper" id="modal-request-pricing2">
+        <div class="modal">
+            <div class="contents">
+                <div class="h1">Request Pricing</div>            
+
+                <form action="#" method="post" data-done-timeout="5">
+                    <div class="line">
+                        <div class="input-holder">
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="service" data-hubspot-name="service" value="Microbilling - Virtual phone number">
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-request-pricing-agreement2" checked="checked"><label for="modal-request-pricing-agreement2">I agree to the <a href="privacy-policy.html">privacy policy</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 	<div class="modal-wrapper" id="modal-done">
 		<div class="modal">
 			<div class="contents">
@@ -420,6 +490,78 @@
 			</div>
 		</div>
 	</div>
+
+    <div class="modal-wrapper" id="modal-become-partner1">
+        <div class="modal">
+            <div class="contents">
+                <div class="h1">Become a Partner</div>            
+
+                <form action="#" method="post" data-done-timeout="5">
+                    <div class="line">
+                        <div class="input-holder">
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="type" data-hubspot-name="type" value="Telecom Carriers">
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-become-partner1-agreement" checked="checked"><label for="modal-become-partner1-agreement">I agree to the <a href="privacy-policy.html">privacy policy</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-wrapper" id="modal-become-partner2">
+        <div class="modal">
+            <div class="contents">
+                <div class="h1">Become a Partner</div>            
+
+                <form action="#" method="post" data-done-timeout="5">
+                    <div class="line">
+                        <div class="input-holder">
+                            <input type="text" name="name" data-hubspot-name="firstname" placeholder="Name" maxlength="255" required>
+                            <i>Name</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="email" name="email" data-hubspot-name="email" placeholder="E-mail" maxlength="255" required>
+                            <i>E-mail</i>
+                        </div>
+                        <div class="input-holder">
+                            <input type="text" name="company" data-hubspot-name="company" placeholder="Company" maxlength="255">
+                            <i>Company</i>
+                        </div>                        
+                    </div>
+                    <div class="line scd">
+                        <div class="input-holder">
+                            <textarea name="text" data-hubspot-name="message" placeholder="A few words about your request" class="js-autoheight"></textarea>
+                            <i>A few words about your request</i>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="type" data-hubspot-name="type" value="Service Providers">
+
+                    <div class="cb-line"><input type="checkbox" name="agreement" id="modal-become-partner2-agreement" checked="checked"><label for="modal-become-partner2-agreement">I agree to the <a href="privacy-policy.html">privacy policy</a></label></div>
+                    <div class="btn-line"><button class="btn"><span>Send</span></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 	<script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script type="text/javascript" src="assets/js/scripts.js?v31"></script>
